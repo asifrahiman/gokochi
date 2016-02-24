@@ -119,7 +119,9 @@
 								<li data-target="#carousel-example-generic" data-slide-to="6"></li>
                             </ol>
                             <div class="carousel-inner text-align=centre">
-                                <?php  $conn = new mysqli("23.96.93.179", "root","g0k0chi@123","travel");
+                                <?php 
+								$dbname = "travel"								
+								$conn = new mysqli("localhost", "asif","asif", $dbname);
 								$sql = "SELECT name,id FROM `carousal` where id=1";
 								$result = $conn->query($sql);
 								
@@ -150,7 +152,7 @@
 								} else {
 									echo "0 results";
 								}
-								$conn->close();?>
+								?>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>

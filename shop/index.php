@@ -280,12 +280,10 @@
         <div class="row">
 			
 				<?php 
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
+				
 				$dbname = "shops";
 
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				$conn = new mysqli("localhost", "asif","asif", $dbname);
 				
 				
 				if($_GET['name'])

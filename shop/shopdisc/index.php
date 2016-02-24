@@ -85,7 +85,7 @@ $cat=$_GET['category'];
 				$dbname = "shops";
 
 				// Create connection
-				 $conn = new mysqli("23.96.93.179","root","g0k0chi@123", $dbname);
+				 $conn = new mysqli("localhost", "asif","asif", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -236,7 +236,7 @@ $cat=$_GET['category'];
 						  $row3 = $result3->fetch_assoc();
 						  $count=$row3['COUNT(*)'];
 						  $sql="SELECT * FROM `rivew` where id=$shop_id and name='$name'  ";
-						  $conn3 = new mysqli("localhost", "root","","shops");
+						 
 						  $result3=$conn->query($sql);
 							$avg=0;
 						  if ($result3->num_rows > 0) {$sum=0;

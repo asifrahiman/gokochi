@@ -86,7 +86,7 @@ $name= $_GET['name'];
 				$dbname = "shops";
 
 				// Create connection
-				 $conn = new mysqli("23.96.93.179", "root","g0k0chi@123", $dbname);
+				 $conn = new mysqli("localhost", "asif","asif", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -190,7 +190,7 @@ $name= $_GET['name'];
 									  
 								  }$avg=$sum/$count;}
 								  
-								  $conn3->close();
+								  
 								 ?>
 								<p class="pull-right" id="dispcount"><?php echo $count ?> reviews</p>
 								<p id="ratstar">
@@ -271,7 +271,7 @@ $name= $_GET['name'];
 										</div>
 									</div>
 
-									<?php $conn3->close();}}?>
+									<?php}}?>
 							</div>
 						</div>
 
