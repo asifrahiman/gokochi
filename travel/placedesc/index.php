@@ -93,7 +93,7 @@
 				<?php error_reporting(0);
 								$flag = $_GET['flag'];
 								$key1 = $_GET['key1'];
-								 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123","travel");
+								 $conn = new mysqli("23.96.93.179", "root","g0k0chi@123","travel");
 								$sql = "SELECT * FROM `tourism` where key1=$key1";
 								$result = $conn->query($sql);
 								

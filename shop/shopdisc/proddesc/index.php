@@ -86,7 +86,7 @@ $name= $_GET['name'];
 				$dbname = "shops";
 
 				// Create connection
-				 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123", $dbname);
+				 $conn = new mysqli("23.96.93.179", "root","g0k0chi@123", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
