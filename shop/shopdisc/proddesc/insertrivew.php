@@ -8,7 +8,7 @@
   if($username){
   if($comment or $rating){
   $sql="INSERT INTO `rivew` (`rating`, `comment`,id,name,username) VALUES ('$rating', '$comment','$id','$name','$username')";
-  $conn = new mysqli("localhost", "root","","shops");
+  $conn = new mysqli("localhost", "asif", "asif","shops");
   if($conn->query($sql))
 	  {
     echo "review inserted";

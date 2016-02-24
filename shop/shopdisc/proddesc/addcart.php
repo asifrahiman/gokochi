@@ -7,7 +7,7 @@
   session_start();
   error_reporting(0);
   
-  $conn = new mysqli("localhost", "root","","shops");
+  $conn = new mysqli("localhost", "asif", "asif","shops");
   
   $sql = "SELECT stock FROM products where name='$name' and shop_id=$id ";
   $result=$conn->query($sql);

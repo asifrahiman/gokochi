@@ -9,7 +9,7 @@ error_reporting(0);
   if($username){
   if($comment or $rating){
   $sql="INSERT INTO `rivew` (`rating`, `comment`,id,username) VALUES ('$rating', '$comment','$id','$username')";
-  $conn = new mysqli("localhost", "root","","travel");
+  $conn = new mysqli("localhost", "asif", "asif","travel");
   if($conn->query($sql))
 	  {
     echo "review inserted";

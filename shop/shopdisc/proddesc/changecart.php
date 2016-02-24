@@ -3,7 +3,7 @@
   $quantity=$_POST['quantity'];
   $name=$_POST['name'];
   $id=$_POST['id'];
-  $conn = new mysqli("localhost", "root","","shops");
+  $conn = new mysqli("localhost", "asif", "asif","shops");
   
   $sql = "SELECT stock FROM products where name='$name' and id=$id ";
   $result=$conn->query($sql);
