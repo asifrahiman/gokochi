@@ -336,11 +336,11 @@
 					else
 					$construct .="AND name LIKE '%$search_each%'";
 					}
-				$sql = "SELECT name,id,stock,shop_name FROM `products`,shops where products.shop_id=shops.shop_id and $construct LIMIT $offset1, $rec_limit1";
+				$sql = "SELECT name,id,stock,shop_name,shops.shop_id FROM `products`,shops where products.shop_id=shops.shop_id and $construct LIMIT $offset1, $rec_limit1";
 				}
 				
 				else
-				$sql = "SELECT name,id,stock,shop_name FROM `products`,shops where products.shop_id=shops.shop_id LIMIT $offset1, $rec_limit1 ";
+				$sql = "SELECT name,id,stock,shop_name,shops.shop_id FROM `products`,shops where products.shop_id=shops.shop_id LIMIT $offset1, $rec_limit1 ";
 
 				
 				if ($conn->query($sql)) {
@@ -352,7 +352,7 @@
 					while($row = $result->fetch_assoc()) {{?>
 					<div class="col-md-4 portfolio-item">
 					<a href="shopdisc/proddesc/index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>">
-                    <img class="img-responsive" src="getimg1.php?id=<?php echo $row["id"];?>" width="700px" height="200px" alt=""/>
+                    <img class="img-responsive" src="getimg1.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>" width="700px" height="200px" alt=""/>
 					</a><h4 class="pull-right"><?php if(!$row["stock"]){echo "out of stock";} ?></h4>
 					<h3>
                     <a  href="shopdisc/proddesc/index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>"><?php echo $row["name"]?></a>

@@ -72,8 +72,7 @@
                         <a href="../">About Kochi</a>
                     </li>
                     <li class="page-scroll">
-                        <?php  session_start();
-						 
+                        <?php   
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
                         <a href="../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>

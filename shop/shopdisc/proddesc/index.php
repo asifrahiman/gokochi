@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,14 +61,12 @@
                         <a href="../../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
-						<?php 
-						session_start();
-						$username=$_SESSION['user_name']; 
-						if($_SESSION['user_name']){?>
-                        <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Welcome <?php echo $username;?></a>
+                        <?php  session_start();
+						 
+						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
+                        <a href="../../../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
                         <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
-                        
                     </li>
                     
                 </ul>
@@ -77,7 +75,7 @@
         </div>
         <!-- /.container -->
     </nav>
-	<?php 
+	<?php error_reporting(0);
 $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
@@ -86,14 +84,14 @@ $name= $_GET['name'];
 				$dbname = "shops";
 
 				// Create connection
-				 $conn = new mysqli("localhost", "asif","asif", $dbname);
+				$conn = new mysqli("localhost", "asif","asif", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
 				}
 
 				
-				$sql = "SELECT * FROM `products`,shops where products.shop_id=shops.shop_id and products.shop_id=$id and name='$name'" ;
+				$sql = "SELECT * FROM `products`,shops where products.shop_id=shops.shop_id and products.shop_id=$id and name='$name'";
 				
 				
 				if ($conn->query($sql)) {
@@ -115,7 +113,7 @@ $name= $_GET['name'];
                     <a  href="../index.php?id=<?php echo $row["shop_id"]?>" >all</a>
                 </li>
                 <li>
-                    <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$id	 ";
+                    <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$id";
 					if ($conn->query($sql2)) {
 					$result2 = $conn->query($sql2);
 					if ($result2->num_rows > 0) {
@@ -138,7 +136,7 @@ $name= $_GET['name'];
 								<div class="row control-group" style="margin-left:10%;padding-top:20px">
 									<div class="form-group col-sm-10 floating-label-form-group controls">
 										<input type="hidden" name="id" value="<?php echo $row["id"]?>" />
-										<input type="text" class="form-control" placeholder="search for products from <?php echo $row["username"]?>"  name="name" id="search_tag" required data-validation-required-message="search for products from <?php echo $row["username"]?>">
+										<input type="text" class="form-control" placeholder="search for products from <?php echo $row["shop_name"]?>"  name="name" id="search_tag" required data-validation-required-message="search for products from <?php echo $row["shop_name"]?>">
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="col-sm-2">
@@ -163,15 +161,14 @@ $name= $_GET['name'];
 						<h4><?php echo $row["shop_name"]?></p></h4>
 						<div class="thumbnail">
 						
-							<img class="img-responsive" src="getimg1.php?id=<?php echo $row["id"]?>" alt="">
+							<img class="img-responsive" src="getimg1.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>" alt="">
 							<div class="caption-full">
-								<h4 class="pull-right"><?php if(!$row["stock"]){echo "out of stock";} ?></h4>
 								<h4 class="pull-right"><i class="fa fa-fw fa-inr"></i><?php echo $row["price"]?></h4>
 								<h4><?php echo $row["name"]?>
 								</h4>
-								
-								<p><?php echo $row1["company"]?> </p>
-								<p><?php echo $row1["product_details"]?></p>
+								<h4><?php if(!$row["stock"]){echo "out of stock";} ?></h4>
+								<p><?php echo $row["company"]?> </p>
+								<p><?php echo $row["product_details"]?></p>
 							</div>
 							<div class="ratings">
 							<?php
@@ -181,7 +178,7 @@ $name= $_GET['name'];
 								  $row3 = $result3->fetch_assoc();
 								  $count=$row3['COUNT(*)'];
 								  $sql="SELECT * FROM `rivew` where id=$id and name='$name'";
-								  
+								  $conn3 = new mysqli("localhost", "root","","asif");
 								  $result3=$conn->query($sql); 
 								  if ($result3->num_rows > 0) {$sum=0;
 								  while($row3 = $result3->fetch_assoc()) {
@@ -190,7 +187,7 @@ $name= $_GET['name'];
 									  
 								  }$avg=$sum/$count;}
 								  
-								  
+								  $conn3->close();
 								 ?>
 								<p class="pull-right" id="dispcount"><?php echo $count ?> reviews</p>
 								<p id="ratstar">
@@ -206,7 +203,7 @@ $name= $_GET['name'];
 							
 							<form accept-charset="UTF-8" class="pull-right" id="addcart" method="get" >
 											
-											<input type="number" class="form-control" placeholder="input quantity" name="quantity" />
+											<input type="text" class="form-control" placeholder="input quantity" name="quantity" />
 											<input type="hidden" name="flag" value="3" />
 											<input type="hidden" name="name" value="<?php echo $name ?>" />
 											<input type="hidden" name="id" value="<?php echo $id ?>" /><br>
@@ -248,7 +245,7 @@ $name= $_GET['name'];
 							<div id="review-box">
 									
 									<?php $sql="SELECT * FROM `rivew` where id=$id and name='$name'  ORDER BY `time` DESC  ";
-										  
+										  $conn3 = new mysqli("localhost", "root","","asif");
 										  $result3=$conn->query($sql); 
 										  
 
@@ -271,7 +268,7 @@ $name= $_GET['name'];
 										</div>
 									</div>
 
-									<?php}}?>
+									<?php $conn3->close();}}?>
 							</div>
 						</div>
 
@@ -281,7 +278,6 @@ $name= $_GET['name'];
 
 			</div>
 									
-			<!-- /.container -->
 			<?php }}
 									} else {
 									echo "0 results";
