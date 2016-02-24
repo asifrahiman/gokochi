@@ -160,7 +160,7 @@ $name= $_GET['name'];
 
 					<div class="col-md-12">
 						<?php while($row = $result->fetch_assoc()) {{?>
-						<h4><?php echo $row["username"]?></p></h4>
+						<h4><?php echo $row["shop_name"]?></p></h4>
 						<div class="thumbnail">
 						
 							<img class="img-responsive" src="getimg1.php?id=<?php echo $row["id"]?>" alt="">

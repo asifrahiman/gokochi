@@ -226,7 +226,7 @@ $cat=$_GET['category'];
                                 <h4><a  href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["shop_id"]?>"><?php echo $row1["name"]?></h4></a>
                                 </h4>
 								<h4><?php if(!$row1["stock"]){echo "out of stock";} ?></h4>
-                                <p><?php echo $row1["product_details"]?><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["id"]?>"></a>.</p>
+                                <p><?php echo $row1["product_details"]?><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["shop_id"]?>"></a>.</p>
                             </div>
                             <div class="ratings">
                                 <?php $name=$row1["name"];
