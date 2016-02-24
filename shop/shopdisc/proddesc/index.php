@@ -176,7 +176,7 @@ $name= $_GET['name'];
 								  $row3 = $result3->fetch_assoc();
 								  $count=$row3['COUNT(*)'];
 								  $sql="SELECT * FROM `rivew` where id=$id and name='$name'";
-								  $conn3 = new mysqli("localhost", "root","","asif");
+								  
 								  $result3=$conn->query($sql); 
 								  if ($result3->num_rows > 0) {$sum=0;
 								  while($row3 = $result3->fetch_assoc()) {
@@ -185,7 +185,7 @@ $name= $_GET['name'];
 									  
 								  }$avg=$sum/$count;}
 								  
-								  $conn3->close();
+								  
 								 ?>
 								<p class="pull-right" id="dispcount"><?php echo $count ?> reviews</p>
 								<p id="ratstar">
@@ -243,7 +243,7 @@ $name= $_GET['name'];
 							<div id="review-box">
 									
 									<?php $sql="SELECT * FROM `rivew` where id=$id and name='$name'  ORDER BY `time` DESC  ";
-										  $conn3 = new mysqli("localhost", "root","","asif");
+										  
 										  $result3=$conn->query($sql); 
 										  
 
@@ -266,7 +266,7 @@ $name= $_GET['name'];
 										</div>
 									</div>
 
-									<?php $conn3->close();}}?>
+									<?php}}?>
 							</div>
 						</div>
 
