@@ -82,8 +82,6 @@ $id = $_GET['id'];
 $name= $_GET['name'];
 				
 				$dbname = "shops";
-
-				// Create connection
 				$conn = new mysqli("localhost", "asif","asif", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
