@@ -17,11 +17,10 @@
  {
   $flag=$_GET['flag'];
   $sql="INSERT INTO `status` (`flag`) VALUES ('$flag')";
-  $conn = new mysqli("localhost", "root","","login");
+  $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123","login");
   $conn->query($sql);
   $conn->close();
  }
-
   $sql="select * from status" ;
   $conn = new mysqli("localhost", "root","","login");
   $result=$conn->query($sql);
