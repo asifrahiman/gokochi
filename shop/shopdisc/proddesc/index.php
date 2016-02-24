@@ -85,7 +85,7 @@ $name= $_GET['name'];
 				$servername = "localhost";
 				$username = "root";
 				$password = "";
-				$dbname = "asif";
+				$dbname = "shops";
 
 				// Create connection
 				$conn = new mysqli($servername, $username, $password, $dbname);
@@ -95,34 +95,14 @@ $name= $_GET['name'];
 				}
 
 				
-				$sql = "SELECT * FROM `asif` where id=$id";
+				$sql = "SELECT * FROM `products`,shops where products.shop_id=shops.shop_id and products.shop_id=$id and name='$name'" ;
 				
 				
 				if ($conn->query($sql)) {
 
 					$result = $conn->query($sql);
 
-				if ($result->num_rows > 0) {
-					// output data of each row
-					while($row = $result->fetch_assoc()) {{ $shopname=$row["username"]; ?>
-					<?php	
-				
-				// Create connection
-				$conn1 = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn1->connect_error) {
-					die("Connection failed: " . $conn1->connect_error);
-				}
-
-				
-				$sql1 = "SELECT * FROM $shopname where name='$name' ";
-				
-				
-				if ($conn1->query($sql1)) {
-
-					$result1= $conn1->query($sql1);
-
-				if ($result1->num_rows > 0) {?>
+				if ($result->num_rows > 0) {?>
 					
 	<div id="wrapper">
 
@@ -130,21 +110,22 @@ $name= $_GET['name'];
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">Categories
+                    <a>Categories
                     </a>
                 </li>
                 <li>
-                    <a  href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["id"]?>" >all</a>
+                    <a  href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>" >all</a>
                 </li>
                 <li>
-                    <?php $sql2 = "SELECT DISTINCT `category` FROM `$shopname` ";
+                    <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$id	 ";
 					if ($conn->query($sql2)) {
 					$result2 = $conn->query($sql2);
 					if ($result2->num_rows > 0) {
 					while($row2 = $result2->fetch_assoc()) {?>
-                    <a href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
+                    <a href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
 					<?php }}}?>
                 </li>
+				
                 
             </ul>
         </div>
@@ -180,28 +161,29 @@ $name= $_GET['name'];
 					
 
 					<div class="col-md-12">
-						<?php while($row1 = $result1->fetch_assoc()) {{?>
+						<?php while($row = $result->fetch_assoc()) {{?>
 						<h4><?php echo $row["username"]?></p></h4>
 						<div class="thumbnail">
 						
-							<img class="img-responsive" src="getimg1.php?prodid=<?php echo $row1["prodid"]?>&name=<?php echo $row["username"]?>" alt="">
+							<img class="img-responsive" src="getimg1.php?id=<?php echo $row["id"]?>" alt="">
 							<div class="caption-full">
-								<h4 class="pull-right"><i class="fa fa-fw fa-inr"></i><?php echo $row1["price"]?></h4>
-								<h4><?php echo $row1["name"]?>
+								<h4 class="pull-right"><?php if(!$row["stock"]){echo "out of stock";} ?></h4>
+								<h4 class="pull-right"><i class="fa fa-fw fa-inr"></i><?php echo $row["price"]?></h4>
+								<h4><?php echo $row["name"]?>
 								</h4>
-								<h4><?php if(!$row1["stock"]){echo "out of stock";} ?></h4>
+								
 								<p><?php echo $row1["company"]?> </p>
-								<p><?php echo $row1["description"]?></p>
+								<p><?php echo $row1["product_details"]?></p>
 							</div>
 							<div class="ratings">
 							<?php
 								  $sql="SELECT COUNT(*) FROM `rivew` where id=$id and name='$name'  ";
-								  $conn3 = new mysqli("localhost", "root","","asif");
+								  $conn3 = new mysqli("localhost", "root","","shops");
 								  $result3=$conn->query($sql); 
 								  $row3 = $result3->fetch_assoc();
 								  $count=$row3['COUNT(*)'];
 								  $sql="SELECT * FROM `rivew` where id=$id and name='$name'";
-								  $conn3 = new mysqli("localhost", "root","","asif");
+								  $conn3 = new mysqli("localhost", "root","","shops");
 								  $result3=$conn->query($sql); 
 								  if ($result3->num_rows > 0) {$sum=0;
 								  while($row3 = $result3->fetch_assoc()) {
@@ -226,7 +208,7 @@ $name= $_GET['name'];
 							
 							<form accept-charset="UTF-8" class="pull-right" id="addcart" method="get" >
 											
-											<input type="text" class="form-control" placeholder="input quantity" name="quantity" />
+											<input type="number" class="form-control" placeholder="input quantity" name="quantity" />
 											<input type="hidden" name="flag" value="3" />
 											<input type="hidden" name="name" value="<?php echo $name ?>" />
 											<input type="hidden" name="id" value="<?php echo $id ?>" /><br>
@@ -268,7 +250,7 @@ $name= $_GET['name'];
 							<div id="review-box">
 									
 									<?php $sql="SELECT * FROM `rivew` where id=$id and name='$name'  ORDER BY `time` DESC  ";
-										  $conn3 = new mysqli("localhost", "root","","asif");
+										  $conn3 = new mysqli("localhost", "root","","shops");
 										  $result3=$conn->query($sql); 
 										  
 
@@ -300,16 +282,7 @@ $name= $_GET['name'];
 				
 
 			</div>
-									<?php }}
-									} else {
-									echo "0 results";
-									}
-									} else {
-									echo "Error creating table: " . $conn1->error;
-									}
-
-									$conn1->close();
-									?>
+									
 			<!-- /.container -->
 			<?php }}
 									} else {

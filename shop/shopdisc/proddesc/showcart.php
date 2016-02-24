@@ -45,7 +45,7 @@ $sum1=0;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -63,9 +63,9 @@
                         <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <a href="asif/php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
 					</li>
 					<li class="page-scroll">
                         <a href="#contact">Contact Us</a>

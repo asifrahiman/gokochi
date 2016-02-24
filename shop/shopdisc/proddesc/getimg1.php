@@ -1,9 +1,8 @@
 <?php
-$id = $_GET['prodid'];
-$name=$_GET['name']; 
+$id = $_GET['id'];
   mysql_connect("localhost", "root", "") OR DIE (mysql_error());
-  mysql_select_db("asif");
-  $sql = "SELECT image FROM $name WHERE prodid=$id";
+  mysql_select_db("shops");
+  $sql = "SELECT image FROM products WHERE id=$id";
   $result = mysql_query("$sql");
   $row = mysql_fetch_assoc($result);
   
