@@ -247,7 +247,7 @@ $cat=$_GET['category'];
 						  }$avg=$sum/$count;
 						 }
 						  
-						  $conn3->close();?>
+						  ?>
                         <p class="pull-right"><?php echo $count ?> reviews</p>
                         <p>
                             <?php $num = round($avg);
@@ -264,7 +264,7 @@ $cat=$_GET['category'];
 						<?php }}
 							} else {
 							echo "No results";
-							}}$conn1->close();
+							}}
 							?>
                 </div>
             </div>

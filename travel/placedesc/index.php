@@ -93,7 +93,8 @@
 				<?php error_reporting(0);
 								$flag = $_GET['flag'];
 								$key1 = $_GET['key1'];
-								 $conn = new mysqli("23.96.93.179", "root","g0k0chi@123","travel");
+								$dbname = "travel";	
+								$conn = new mysqli("localhost", "asif","asif", $dbname);
 								$sql = "SELECT * FROM `tourism` where key1=$key1";
 								$result = $conn->query($sql);
 								
@@ -124,7 +125,7 @@
 							  
 						  }$avg=$sum/$count;}
 						  
-						  $conn3->close();?>
+						  ?>
                         <p class="pull-right" id="dispcount"><?php echo $count ?> reviews</p>
 								<p id="ratstar">
 									<?php $num = round($avg);
@@ -189,7 +190,7 @@
                         </div>
                     </div>
 
-						<?php $conn3->close();}}?>
+						<?php }}?>
 					</div>
                 </div>
 

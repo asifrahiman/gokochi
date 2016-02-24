@@ -120,7 +120,7 @@
                             </ol>
                             <div class="carousel-inner text-align=centre">
                                 <?php 
-								$dbname = "travel"								
+								$dbname = "travel";								
 								$conn = new mysqli("localhost", "asif","asif", $dbname);
 								$sql = "SELECT name,id FROM `carousal` where id=1";
 								$result = $conn->query($sql);
