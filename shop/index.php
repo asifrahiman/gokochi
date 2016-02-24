@@ -109,7 +109,7 @@
 				$dbname = "shops";
 
 				
-				 $conn = new mysqli("23.96.93.179", "root","g0k0chi@123", $dbname);
+				 $conn = new mysqli("localhost", "root","g0k0chi@123", $dbname);
 				
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -280,6 +280,13 @@
         <div class="row">
 			
 				<?php 
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$dbname = "shops";
+
+				$conn = new mysqli($servername, $username, $password, $dbname);
+				
 				
 				if($_GET['name'])
 				{
