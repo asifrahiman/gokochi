@@ -210,7 +210,7 @@ $name= $_GET['name'];
 											<button class="btn btn-success pull-right"  type="submit"><i class="fa fa-fw fa-shopping-cart"></i>Add to cart</button>
 											
 										</form><br>
-										<p id="addcartstatus"></p>
+										<p id="addcartstatus "></p>
 							</div></div>
 						</div>
 
