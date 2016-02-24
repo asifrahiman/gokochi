@@ -109,7 +109,7 @@
 				$dbname = "shops";
 
 				
-				 $conn = new mysqli("localhost", "root","g0k0chi@123", $dbname);
+				 $conn = new mysqli("localhost", "asif","asif", $dbname);
 				
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
