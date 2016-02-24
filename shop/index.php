@@ -39,32 +39,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php?flag=2"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
                         <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <a href="../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>
@@ -73,7 +73,7 @@
         </div>
         <!-- /.container -->
     </nav>
-	<form action="http://127.0.0.1/asif/shop/index.php" method="get" novalidate>
+	<form action="index.php" method="get" novalidate>
 		<div class="row control-group container" style="margin-left:10%;padding-top:20px">
 			<div class="form-group col-sm-10 floating-label-form-group controls">
 				<input type="text" class="form-control" placeholder="Search for Shops,Products"  name="name" id="search_tag" >
@@ -105,13 +105,11 @@
 			
 				<?php
 				
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
+				
 				$dbname = "shops";
 
 				
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123", $dbname);
 				
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -262,7 +260,7 @@
 							echo "Error creating table: " . $conn->error;
 						}
 
-						$conn->close();
+						
 					?>
        
 				
@@ -282,13 +280,6 @@
         <div class="row">
 			
 				<?php 
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "shops";
-
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				
 				
 				if($_GET['name'])
 				{
@@ -355,11 +346,11 @@
 					
 					while($row = $result->fetch_assoc()) {{?>
 					<div class="col-md-4 portfolio-item">
-					<a href="http://127.0.0.1/asif/shop/shopdisc/proddesc/index.php?id=<?php echo $row["id"]?>">
+					<a href="shopdisc/proddesc/index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>">
                     <img class="img-responsive" src="getimg1.php?id=<?php echo $row["id"];?>" width="700px" height="200px" alt=""/>
 					</a><h4 class="pull-right"><?php if(!$row["stock"]){echo "out of stock";} ?></h4>
 					<h3>
-                    <a  href="http://127.0.0.1/asif/shop/shopdisc/proddesc/index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["id"]?>"><?php echo $row["name"]?></a>
+                    <a  href="shopdisc/proddesc/index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>"><?php echo $row["name"]?></a>
 					</h3>
 					<p><?php echo $row["shop_name"]?></p>
 					

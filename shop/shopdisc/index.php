@@ -39,32 +39,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php?flag=2"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
 						<?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <a href="../../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>
@@ -81,13 +81,11 @@ if($_GET['name']!=null)
 $name=$_GET['name'];
 if($_GET['category']!=null)
 $cat=$_GET['category'];
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
+				
 				$dbname = "shops";
 
 				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -116,7 +114,7 @@ $cat=$_GET['category'];
                     </a>
                 </li>
                 <li>
-                    <a  href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>" >all</a>
+                    <a  href="index.php?id=<?php echo $row["shop_id"]?>" >all</a>
                 </li>
                 <li>
                     <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$shopid	 ";
@@ -124,7 +122,7 @@ $cat=$_GET['category'];
 					$result2 = $conn->query($sql2);
 					if ($result2->num_rows > 0) {
 					while($row2 = $result2->fetch_assoc()) {?>
-                    <a href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
+                    <a href="index.php?id=<?php echo $row["shop_id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
 					<?php }}}?>
                 </li>
 				
@@ -139,7 +137,7 @@ $cat=$_GET['category'];
                 <div class="row">
                     <div class="col-lg-12">
 					
-						<form action="http://127.0.0.1/asif/shop/shopdisc/index.php?" method="get" novalidate>
+						<form action="index.php?" method="get" novalidate>
 								<div class="row control-group" style="margin-left:10%;padding-top:20px">
 									<div class="form-group col-sm-10 floating-label-form-group controls">
 										<input type="hidden" name="id" value="<?php echo $row["shop_id"]?>" />
@@ -204,10 +202,10 @@ $cat=$_GET['category'];
 						$shopname=$row["shop_name"];
 
 						// Create connection
-						$conn1 = new mysqli($servername, $username, $password, $dbname);
+						
 						// Check connection
-						if ($conn1->connect_error) {
-							die("Connection failed: " . $conn1->connect_error);
+						if ($conn->connect_error) {
+							die("Connection failed: " . $conn->connect_error);
 						}
 						
 						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	 ";
@@ -215,8 +213,8 @@ $cat=$_GET['category'];
 						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	and name='$name' ";
 						if($_GET['category']!=null)
 						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	and category='$cat' ";
-						if ($conn1->query($sql1)) {
-						$result1= $conn1->query($sql1);
+						if ($conn->query($sql1)) {
+						$result1= $conn->query($sql1);
 						if ($result1->num_rows > 0) { 
 						while($row1 = $result1->fetch_assoc()) {{?>
 						
@@ -233,7 +231,7 @@ $cat=$_GET['category'];
                             <div class="ratings">
                                 <?php $name=$row1["name"];
 						  $sql="SELECT COUNT(*) FROM `rivew` where id=$id and name='$name'  ";
-						  $conn3 = new mysqli("localhost", "root","","shops");
+						  
 						  $result3=$conn->query($sql); 
 						  $row3 = $result3->fetch_assoc();
 						  $count=$row3['COUNT(*)'];

@@ -54,7 +54,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif/"><i class="fa fa-spinner fa-pulse"></i>Go kochi!</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Go kochi!</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,22 +64,20 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../">Services</a>
                     </li>
 					
 					<li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../">About Kochi</a>
                     </li>
                     <li class="page-scroll">
-                        <?php  session_start();
-						 
-						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <?php if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
+                        <a href="../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
 					<li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../">Contact Us</a>
                     </li>
                     
                 </ul>
@@ -146,7 +144,7 @@
                 </div>
             </div>
         </div>
-		<a href="http://127.0.0.1/asif/" class="login-btn" style="text-align:center;margin-bottom:50px;margin-left:500px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+		<a href="../" class="login-btn" style="text-align:center;margin-bottom:50px;margin-left:500px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
     </div>
 </form>
  <!-- jQuery -->

@@ -41,33 +41,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../../../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../../../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../../../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php?flag=2"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="../../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
 						<?php error_reporting(0); 
 						session_start();
 						$username=$_SESSION['user_name']; 
 						if($_SESSION['user_name']){?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Welcome <?php echo $username;?></a>
+                        <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                         
                     </li>
                     
@@ -82,13 +82,11 @@ $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
 $name= $_GET['name'];
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
+				
 				$dbname = "shops";
 
 				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -114,7 +112,7 @@ $name= $_GET['name'];
                     </a>
                 </li>
                 <li>
-                    <a  href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>" >all</a>
+                    <a  href="../index.php?id=<?php echo $row["shop_id"]?>" >all</a>
                 </li>
                 <li>
                     <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$id	 ";
@@ -122,7 +120,7 @@ $name= $_GET['name'];
 					$result2 = $conn->query($sql2);
 					if ($result2->num_rows > 0) {
 					while($row2 = $result2->fetch_assoc()) {?>
-                    <a href="http://127.0.0.1/asif/shop/shopdisc/index.php?id=<?php echo $row["shop_id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
+                    <a href="../index.php?id=<?php echo $row["shop_id"]?>&category=<?php echo $row2["category"]?>"><?php echo $row2["category"]?></a>
 					<?php }}}?>
                 </li>
 				
@@ -136,7 +134,7 @@ $name= $_GET['name'];
             <div class="container-fluid">				
 					
 	
-								<form action="http://127.0.0.1/asif/shop/shopdisc/index.php?" method="get" novalidate>
+								<form action="../index.php?" method="get" novalidate>
 								<div class="row control-group" style="margin-left:10%;padding-top:20px">
 									<div class="form-group col-sm-10 floating-label-form-group controls">
 										<input type="hidden" name="id" value="<?php echo $row["id"]?>" />
@@ -178,12 +176,12 @@ $name= $_GET['name'];
 							<div class="ratings">
 							<?php
 								  $sql="SELECT COUNT(*) FROM `rivew` where id=$id and name='$name'  ";
-								  $conn3 = new mysqli("localhost", "root","","shops");
+								  
 								  $result3=$conn->query($sql); 
 								  $row3 = $result3->fetch_assoc();
 								  $count=$row3['COUNT(*)'];
 								  $sql="SELECT * FROM `rivew` where id=$id and name='$name'";
-								  $conn3 = new mysqli("localhost", "root","","shops");
+								  
 								  $result3=$conn->query($sql); 
 								  if ($result3->num_rows > 0) {$sum=0;
 								  while($row3 = $result3->fetch_assoc()) {
@@ -250,7 +248,7 @@ $name= $_GET['name'];
 							<div id="review-box">
 									
 									<?php $sql="SELECT * FROM `rivew` where id=$id and name='$name'  ORDER BY `time` DESC  ";
-										  $conn3 = new mysqli("localhost", "root","","shops");
+										  
 										  $result3=$conn->query($sql); 
 										  
 

@@ -9,24 +9,7 @@
  * @link https://github.com/panique/php-login-advanced/
  * @license http://opensource.org/licenses/MIT MIT License
  */
-  error_reporting(0);
-
- $flag=0;
- 
- if($_GET['flag']==2)
- {
-  $flag=$_GET['flag'];
-  $sql="INSERT INTO `status` (`flag`) VALUES ('$flag')";
-  $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123","login");
-  $conn->query($sql);
-  $conn->close();
- }
-  $sql="select * from status" ;
-  $conn = new mysqli("localhost", "root","","login");
-  $result=$conn->query($sql);
-  $row = $result->fetch_assoc(); 
-  $flag=$row['flag'];
-  $conn->close();
+  
   
 // check for minimum PHP version
 if (version_compare(PHP_VERSION, '5.3.7', '<')) {
@@ -54,17 +37,9 @@ $login = new Login();
 
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
-    if($flag==0)
+    
     include("views/logged_in1.php");
     
-	 if($flag==2)
-	{$sql="TRUNCATE `status`";
-	  $conn = new mysqli("localhost", "root","","login");
-	  $conn->query($sql);
-	  $conn->close();
-	 $username=$_SESSION['user_name'];
-	 header("Location:http://127.0.0.1/asif/shop/shopdisc/proddesc/showcart.php?"); 
-     exit;}
 	
 
 } else {

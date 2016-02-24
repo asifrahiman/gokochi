@@ -63,7 +63,7 @@
                         <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <a href="php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
                         <a href="php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
 					</li>
@@ -208,7 +208,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" action="http://127.0.0.1/asif/mail/contact_me.php" id="contactForm" novalidate="">
+                    <form name="sentMessage" action="mail/contact_me.php" id="contactForm" novalidate="">
                         <div class="row control-group">
 							<span class="input-group-addon"><i class="fa fa-child fa-fw"></i></span>
                             <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -264,11 +264,11 @@
                         <div class="modal-body">
                             <h2>Tour Around Kochi</h2>
                             <hr class="star-primary">
-                            <img src="http://127.0.0.1/asif/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Get information about various tourist hotspots in kochi.<br> <a href="http://127.0.0.1/asif/">Go Kochi!</a> Choose the places to visit during your visit to kochi </p>
+                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Get information about various tourist hotspots in kochi.<br> <a href="#page-top">Go Kochi!</a> Choose the places to visit during your visit to kochi </p>
                         </div>
                     	<br>
-							<form action="http://127.0.0.1/asif/travel/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
+							<form action="travel/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
 								<div class="row control-group"  width=100% style="margin-left:0px; margin-right:0px;">
 									<div class="form-group col-md-10 floating-label-form-group controls">
 										<input type="text" class="form-control" placeholder="Search for tourist destinations"  name="name" id="search_tag" required data-validation-required-message="search for a tourist destination">
@@ -300,10 +300,10 @@
                         <div class="modal-body">
                             <h2>Shopping</h2>
                             <hr class="star-primary">
-                            <img src="http://127.0.0.1/asif/img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Shop anywhere in kochi from your home.<br> <a href="http://127.0.0.1/asif/">Go Kochi!</a><br> Here you can shop at the shops around kochi from your home! <br> *Delivery charges apply </p>
+                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>Shop anywhere in kochi from your home.<br> <a href="#page-top">Go Kochi!</a><br> Here you can shop at the shops around kochi from your home! <br> *Delivery charges apply </p>
                             <br>
-							<form action="http://127.0.0.1/asif/shop/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;" >
+							<form action="shop/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;" >
 								<div class="row control-group"  >
 									<div class="form-group col-md-10 floating-label-form-group ">
 										<input type="text" class="form-control" placeholder="Search for Shops,Products"  name="name" >
@@ -334,12 +334,12 @@
                         <div class="modal-body">
                             <h2>Kochi Yellow Pages</h2>
                             <hr class="star-primary">
-                            <img src="http://127.0.0.1/asif/img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Get information about various services available in kochi.<br> <a href="http://127.0.0.1/asif/">Go Kochi!</a></p>
+                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                            <p>Get information about various services available in kochi.<br> <a href="#page-top">Go Kochi!</a></p>
                             
 						</div>
                     	<br>
-						<form action="http://127.0.0.1/asif/yellowpage/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
+						<form action="yellowpage/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
 							<div class="row control-group"  width=100% style="margin-left:0px; margin-right:0px;">
 								<div class="form-group col-md-10 floating-label-form-group controls">
 									<input type="text" class="form-control" placeholder="Search for Services"  name="name" id="search_tag" required data-validation-required-message="Enter a shop name, shop type, shop item">

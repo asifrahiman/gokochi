@@ -56,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif/"><i class="fa fa-spinner fa-pulse"></i>Go kochi!</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Go kochi!</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,18 +66,18 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../">Services</a>
                     </li>
 					
 					<li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../">About Kochi</a>
                     </li>
                     <li class="page-scroll">
                        
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a>
+                        <a href="../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a>
                     </li>
 					<li class="page-scroll">
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../">Contact Us</a>
                     </li>
                     
                 </ul>
@@ -127,7 +127,7 @@
             </div></div>
         <div class="row">
 		<div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="http://127.0.0.1/asif/" class="btn btn-lg btn-outline" style="border: 2px solid #171515;
+                    <a href="../" class="btn btn-lg btn-outline" style="border: 2px solid #171515;
 font-size: 20px;color: #2C3E50;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
                 </div>
 		 </div>

@@ -40,19 +40,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
@@ -61,9 +61,9 @@
                         <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"></i>Welcome <?php echo $username;?></a>
+                        <a href="../../php-login/index.php"></i>Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>
@@ -73,7 +73,7 @@
         <!-- /.container -->
     </nav>
 	
-							<form action="http://127.0.0.1/asif/travel/index.php" method="get" novalidate>
+							<form action="../index.php" method="get" novalidate>
 								<div class="row control-group container" style="margin-left:10%;padding-top:20px">
 									<div class="form-group col-sm-10 floating-label-form-group controls">
 										<input type="text" class="form-control" placeholder="Search for Tourist destinations"  name="name" id="search_tag" required data-validation-required-message="Enter a tourist destination">
@@ -93,7 +93,7 @@
 				<?php error_reporting(0);
 								$flag = $_GET['flag'];
 								$key1 = $_GET['key1'];
-								$conn = new mysqli("localhost","root", "","travel");
+								 $conn = new mysqli("gokochi.cloudapp.net", "root","g0k0chi@123","travel");
 								$sql = "SELECT * FROM `tourism` where key1=$key1";
 								$result = $conn->query($sql);
 								
@@ -110,12 +110,12 @@
                     <div class="ratings">
 					<?php
 						  $sql="SELECT COUNT(*) FROM `rivew` where id=$key1";
-						  $conn3 = new mysqli("localhost", "root","","travel");
+						  
 						  $result3=$conn->query($sql); 
 						  $row3 = $result3->fetch_assoc();
 						  $count=$row3['COUNT(*)'];
 						  $sql="SELECT * FROM `rivew` where id=$key1 ";
-						  $conn3 = new mysqli("localhost", "root","","travel");
+						 
 						  $result3=$conn->query($sql); 
 						  if ($result3->num_rows > 0) {$sum=0;
 						  while($row3 = $result3->fetch_assoc()) {
@@ -166,7 +166,7 @@
 
                     <div id="review-box">
 					<?php $sql="SELECT * FROM `rivew` where id=$key1 ORDER BY `time` DESC  ";
-						  $conn3 = new mysqli("localhost", "root","","travel");
+						  
 						  $result3=$conn->query($sql); 
 						  
 
