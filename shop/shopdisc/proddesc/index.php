@@ -176,7 +176,7 @@ $name= $_GET['name'];
 								  $row3 = $result3->fetch_assoc();
 								  $count=$row3['COUNT(*)'];
 								  $sql="SELECT * FROM `rivew` where id=$id and name='$name'";
-								  
+								  $conn3 = new mysqli("localhost", "root","","asif");
 								  $result3=$conn->query($sql); 
 								  if ($result3->num_rows > 0) {$sum=0;
 								  while($row3 = $result3->fetch_assoc()) {
@@ -185,7 +185,7 @@ $name= $_GET['name'];
 									  
 								  }$avg=$sum/$count;}
 								  
-								  
+								  $conn3->close();
 								 ?>
 								<p class="pull-right" id="dispcount"><?php echo $count ?> reviews</p>
 								<p id="ratstar">
@@ -208,7 +208,7 @@ $name= $_GET['name'];
 											<button class="btn btn-success pull-right"  type="submit"><i class="fa fa-fw fa-shopping-cart"></i>Add to cart</button>
 											
 										</form><br>
-										<p id="addcartstatus "></p>
+										<p id="addcartstatus"></p>
 							</div></div>
 						</div>
 
@@ -266,7 +266,7 @@ $name= $_GET['name'];
 										</div>
 									</div>
 
-									<?php}}?>
+									<?php }}?>
 							</div>
 						</div>
 
@@ -343,7 +343,7 @@ $name= $_GET['name'];
 	 <script type="text/javascript">
 	 $("#addcart").submit(function(e) {
 
-    var url = "/asif/shop/shopdisc/proddesc/addcart.php"; // the script where you handle the form input.
+    var url = "addcart.php"; // the script where you handle the form input.
 
     $.ajax({
            type: "POST",
@@ -372,7 +372,7 @@ $name= $_GET['name'];
 		var avg=parseInt(0);
 	 $("#submitreview").submit(function(e) {
 
-    var url = "/asif/shop/shopdisc/proddesc/insertrivew.php"; // the script where you handle the form input.
+    var url = "insertrivew.php"; // the script where you handle the form input.
 
     $.ajax({
            type: "POST",
@@ -417,71 +417,6 @@ $name= $_GET['name'];
 				document.getElementById("ratstar").innerHTML = red;
 			//$("#ratstar").replaceWith(red);
 			$('#submitreview').trigger("reset");
-		  }}
-			
-         });
-
-    e.preventDefault(); // avoid to execute the actual submit of the form.
-});
-</script>
-<script type="text/javascript">
-        if(parseInt(<?php echo $count; ?>))
-		var cou =parseInt(<?php echo $count; ?>);
-		else 
-		var cou=parseInt(0);
-		if(parseInt(<?php echo $count; ?>))
-		var su = parseInt(<?php echo $sum; ?>);
-		else 
-		var su=parseInt(0);
-	    
-		var avg=parseInt(0);
-	 $("#submitreview1").submit(function(e) {
-
-    var url = "/asif/shop/shopdisc/proddesc/insertrivew.php"; // the script where you handle the form input.
-
-    $.ajax({
-           type: "POST",
-           url: url,
-           data: $("#submitreview1").serialize(), // serializes the form's elements.
-           success: function change(data)
-          {document.getElementById("reviewmsg1").innerHTML = data;
-		   
-			
-			if(data=="review inserted")
-			{
-			var qwe = "<hr><div class=\"row\" ><div class=\"col-md-12\">";
-			
-			var cc = 0;
-			if(parseInt(document.getElementById("ratings-hidden1").value))
-				cc=parseInt(document.getElementById("ratings-hidden1").value);
-			
-			cou+=1;
-			
-			su=parseInt(su)+parseInt(cc);
-			avg=parseInt(su)/parseInt(cou);
-			avg=Math.round(avg);
-			var vv = document.getElementById("new-review1").value;
-			for(var i=0;i<cc;++i)
-				qwe += "<span class=\"glyphicon glyphicon-star\" style=\"padding-right: 4px;\"></span>";
-			for(var i=cc;i<5;++i)
-				qwe += "<span class=\"glyphicon glyphicon-star-empty\" style=\"padding-right: 4px;\"></span>";
-			
-			qwe += "<?php echo $username; ?> <span class=\"pull-right\">Now</span><p>";
-			qwe += vv;
-			qwe += "</p></div></div>"
-			
-			$("#review-box").prepend(qwe);
-			document.getElementById("dispcount").innerHTML = cou +' reviews';
-			var red="";
-			for(var i=0;i<avg;++i)
-				red += "<span class=\"glyphicon glyphicon-star\" style=\"padding-right: 4px;\"></span>";
-			for(;i<5;++i)
-				red += "<span class=\"glyphicon glyphicon-star-empty\" style=\"padding-right: 4px;\"></span>";
-			    red += avg;
-				red +=" stars</p>";
-				document.getElementById("ratstar").innerHTML = red;
-			//$("#ratstar").replaceWith(red);
-			$('#submitreview1').trigger("reset");
 		  }}
 			
          });
