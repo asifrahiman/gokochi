@@ -219,14 +219,14 @@ $cat=$_GET['category'];
 						while($row1 = $result1->fetch_assoc()) {{?>
 						
                     <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail"><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["shop_id"]?>">
+                        <div class="thumbnail"><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row1["shop_id"]?>">
                             <img src="getimg1.php?id=<?php echo $row1["id"]?>" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right"><i class="fa fa-fw fa-inr"></i><?php echo $row1["price"]?></h4>
-                                <h4><a  href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["shop_id"]?>"><?php echo $row1["name"]?></h4></a>
+                                <h4><a  href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row1["shop_id"]?>"><?php echo $row1["name"]?></h4></a>
                                 </h4>
 								<h4><?php if(!$row1["stock"]){echo "out of stock";} ?></h4>
-                                <p><?php echo $row1["product_details"]?><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row["shop_id"]?>"></a>.</p>
+                                <p><?php echo $row1["product_details"]?><a href="proddesc/index.php?name=<?php echo $row1["name"]?>&id=<?php echo $row1["shop_id"]?>"></a>.</p>
                             </div>
                             <div class="ratings">
                                 <?php $name=$row1["name"];

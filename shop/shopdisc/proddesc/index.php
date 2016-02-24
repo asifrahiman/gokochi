@@ -61,7 +61,7 @@
                         <a href="../../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
-						<?php error_reporting(0); 
+						<?php 
 						session_start();
 						$username=$_SESSION['user_name']; 
 						if($_SESSION['user_name']){?>
@@ -77,7 +77,7 @@
         </div>
         <!-- /.container -->
     </nav>
-	<?php error_reporting(0);
+	<?php 
 $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
