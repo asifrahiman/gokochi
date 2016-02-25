@@ -554,7 +554,7 @@ class Login
 							if(is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 								if( $_FILES['userfile']['size'] < $maxsize) {
 									$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
-									mysql_connect("localhost", "root", "") OR DIE (mysql_error());
+									mysql_connect("localhost", "asif", "asif") OR DIE (mysql_error());
 									mysql_select_db("login");
 									$sql = "UPDATE users SET image='{$imgData}' WHERE user_id=$user_id"; 
 									mysql_query($sql) or die("Error in Query: " . mysql_error());
