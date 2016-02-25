@@ -40,27 +40,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif/about.php">About</a>
+                        <a href="../../../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../../../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact</a>
+                        <a href="../../../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php?flag=2"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="../../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a>
+                        <?php  session_start();
+						 
+						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
+                        <a href="../../../php-login/index.php">Welcome <?php echo $username;?></a>
+						<?php  } else{?>
+                        <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>
@@ -74,13 +79,10 @@ $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
 $name= $_GET['name'];
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "asif";
+				
 
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				$dbname = "shops";
+				$conn = new mysqli("localhost", "asif","asif", $dbname);
 				// Check connection
 				if ($conn->connect_error) {
 					die("Connection failed: " . $conn->connect_error);
@@ -99,41 +101,32 @@ $name= $_GET['name'];
 					while($row = $result->fetch_assoc()) {{ $shopname=$row["username"]; ?>
 					<?php	
 				
-				// Create connection
-				$conn1 = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn1->connect_error) {
-					die("Connection failed: " . $conn1->connect_error);
-				}
-
 				
 				$sql1 = "SELECT * FROM $shopname where name='$name' ";
 				
 				
-				if ($conn1->query($sql1)) {
+				if ($conn->query($sql1)) {
 
-					$result1= $conn1->query($sql1);
+					$result1= $conn->query($sql1);
 
 				if ($result1->num_rows > 0) {?>
 					
 					
 					
 	
-								<form action="http://127.0.0.1/asif/shop/shopdisc/index.php?" method="get" novalidate>
-								<div class="row control-group container" style="margin-left:10%;padding-top:20px">
+								<form action="../index.php?" method="get" novalidate>
+								<div class="row control-group" style="margin-left:10%;padding-top:20px">
 									<div class="form-group col-sm-10 floating-label-form-group controls">
 										<input type="hidden" name="id" value="<?php echo $row["id"]?>" />
-										<input type="text" class="form-control" placeholder="search for products from <?php echo $row["username"]?>"  name="name" id="search_tag" required data-validation-required-message="search for products from <?php echo $row["username"]?>">
+										<input type="text" class="form-control" placeholder="search for products from <?php echo $row["shop_name"]?>"  name="name" id="search_tag" required data-validation-required-message="search for products from <?php echo $row["shop_name"]?>">
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="col-sm-2">
 										<button type="submit" class="btn btn-success btn-lg"><i class="fa fa-fw fa-shopping-bag"></i> Shop</button>
 									</div>
 								</div>
-							
-								
 								<div id="success"></div>
-							</form>
+								</form>
     <!-- Page Content -->
     <div class="container">
 
