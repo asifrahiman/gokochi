@@ -34,7 +34,7 @@ define("DB_PASS", "asif");
  * COOKIE_SECRET_KEY: Put a random value here to make your app more secure. When changed, all cookies are reset.
  */
 define("COOKIE_RUNTIME", 1209600);
-define("COOKIE_DOMAIN", ".localhost");
+define("COOKIE_DOMAIN", ".127.0.0.1");
 define("COOKIE_SECRET_KEY", "1gp@TMPS{+$78sfpMJFe-92s");
 
 /**
@@ -73,7 +73,7 @@ define("EMAIL_SMTP_ENCRYPTION", "ssl");
  * Configuration for: password reset email data
  * Set the absolute URL to password_reset.php, necessary for email password reset links
  */
-define("EMAIL_PASSWORDRESET_URL", "http://localhost/php-login-advanced/password_reset.php");
+define("EMAIL_PASSWORDRESET_URL", "http://127.0.0.1/php-login-advanced/password_reset.php");
 define("EMAIL_PASSWORDRESET_FROM", "no-reply@example.com");
 define("EMAIL_PASSWORDRESET_FROM_NAME", "My Project");
 define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for PROJECT XY");
@@ -83,7 +83,7 @@ define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your p
  * Configuration for: verification email data
  * Set the absolute URL to register.php, necessary for email verification links
  */
-define("EMAIL_VERIFICATION_URL", "http://localhost/php-login-advanced/register.php");
+define("EMAIL_VERIFICATION_URL", "http://127.0.0.1/php-login-advanced/register.php");
 define("EMAIL_VERIFICATION_FROM", "no-reply@example.com");
 define("EMAIL_VERIFICATION_FROM_NAME", "My Project");
 define("EMAIL_VERIFICATION_SUBJECT", "Account activation for PROJECT XY");
