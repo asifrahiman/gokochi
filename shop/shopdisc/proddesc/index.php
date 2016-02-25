@@ -80,14 +80,7 @@ $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
 $name= $_GET['name'];
-				
-				
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				}
-
-				
+			
 				?>
 					
 	<div id="wrapper">
@@ -106,6 +99,9 @@ $name= $_GET['name'];
                     <?php $sql2 = "SELECT DISTINCT `category` FROM `products` where shop_id=$id";
 					$dbname = "shops";
 					$conn = new mysqli("localhost", "asif","asif", $dbname);
+					if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+					}
 					if ($conn->query($sql2)) {
 					$result2 = $conn->query($sql2);
 					if ($result2->num_rows > 0) {
@@ -122,7 +118,16 @@ $name= $_GET['name'];
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">				
-					
+							<?php 
+						$sql = "SELECT * FROM `products`,shops where products.shop_id=shops.shop_id and products.shop_id=$id and name='$name'";
+				
+				
+						if ($conn->query($sql)) {
+
+							$result = $conn->query($sql);
+
+						if ($result->num_rows > 0) {
+							?>
 	
 								<form action="../index.php?" method="get" novalidate>
 								<div class="row control-group" style="margin-left:10%;padding-top:20px">
@@ -150,14 +155,6 @@ $name= $_GET['name'];
 
 					<div class="col-md-12">
 						<?php 
-						$sql = "SELECT * FROM `products`,shops where products.shop_id=shops.shop_id and products.shop_id=$id and name='$name'";
-				
-				
-						if ($conn->query($sql)) {
-
-							$result = $conn->query($sql);
-
-						if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {{?>
 						<h4><?php echo $row["shop_name"]?></p></h4>
 						<div class="thumbnail">
