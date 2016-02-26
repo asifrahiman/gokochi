@@ -13,7 +13,7 @@
 	 echo "Product out of stock";
   else{if($quantity){if($quantity>0){
 	  $sql="UPDATE `cart` SET `quantity` = $quantity WHERE username = '$username' and name='$name' and id=$id ";
-  $conn = new mysqli("localhost", "root","","shops");
+  
   if($conn->query($sql)){echo "Quantity changed";}}else echo"plese input valid quantity";
   }else {echo "Please input quantity";}}
   $conn->close();

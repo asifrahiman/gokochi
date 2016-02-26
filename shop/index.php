@@ -56,7 +56,7 @@
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="shopdisc/proddesc/showcart.php"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
                         <?php  session_start();

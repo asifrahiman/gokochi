@@ -58,7 +58,7 @@
                 </ul>
 				<ul class="nav navbar-nav pull-right">
 					<li>
-                        <a href="../../../"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
+                        <a href="showcart.php"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
                     </li>
                     <li>
                         <?php  session_start();
@@ -75,7 +75,7 @@
         </div>
         <!-- /.container -->
     </nav>
-	<?php
+	<?php error_reporting(0);
 $id='1';
 if($_GET['id']!=null)
 $id = $_GET['id'];
@@ -201,7 +201,7 @@ $name= $_GET['name'];
 							
 							<form accept-charset="UTF-8" class="pull-right" id="addcart" method="get" >
 											
-											<input type="text" class="form-control" placeholder="input quantity" name="quantity" />
+											<input type="number" class="form-control" placeholder="input quantity" name="quantity" />
 											<input type="hidden" name="flag" value="3" />
 											<input type="hidden" name="name" value="<?php echo $name ?>" />
 											<input type="hidden" name="id" value="<?php echo $id ?>" /><br>
