@@ -1,11 +1,11 @@
-<?php session_start(); error_reporting(0); 
+<?php session_start();
   $username=$_SESSION['user_name'];
   $quantity=$_POST['quantity'];
   $name=$_POST['name'];
   $id=$_POST['id'];
   $conn = new mysqli("localhost", "asif", "asif","shops");
   
-  $sql = "SELECT stock FROM products where name='$name' and id=$id ";
+  $sql = "SELECT stock FROM products where name='$name' and shop_id=$id ";
   $result=$conn->query($sql);
   $row = $result->fetch_assoc();
   
@@ -17,6 +17,6 @@
   if($conn->query($sql)){echo "Quantity changed";}}else echo"plese input valid quantity";
   }else {echo "Please input quantity";}}
   $conn->close();
- // header("Location:http://127.0.0.1/asif/shop/shopdisc/proddesc/showcart.php?name=$name&id=$id&flag=$flag"); 
-  // exit;
+  header("Location:showcart.php"); 
+  exit;
   ?> 

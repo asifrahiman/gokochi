@@ -235,7 +235,7 @@ $cat=$_GET['category'];
 						  $result3=$conn->query($sql); 
 						  $row3 = $result3->fetch_assoc();
 						  $count=$row3['COUNT(*)'];
-						  $sql="SELECT * FROM `rivew` where id=$shop_id and name='$name'  ";
+						  $sql="SELECT * FROM `rivew` where id=$id and name='$name'  ";
 						 
 						  $result3=$conn->query($sql);
 							$avg=0;
