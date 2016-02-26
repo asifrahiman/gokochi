@@ -263,7 +263,7 @@
 		var avg=parseInt(0);
 	 $("#submitreview").submit(function(e) {
 
-    var url = "/asif/travel/placedesc/insertrivew.php"; // the script where you handle the form input.
+    var url = "insertrivew.php"; // the script where you handle the form input.
 
     $.ajax({
            type: "POST",
