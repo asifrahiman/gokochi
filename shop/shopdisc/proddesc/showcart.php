@@ -140,7 +140,7 @@ $sum1=0;
                                 <p><?php echo $row["product_details"]?><a href="index.php?name=<?php echo $row["name"]?>&id=<?php echo $row["shop_id"]?>"></a>.</p><br>
                             </div>
 							<div class="caption" style="height:110px">
-								<form accept-charset="UTF-8" class="pull-right" id="changeqty<?php echo $row["name"]?><?php echo $row["shop_id"]?>" action="changecart.php" method="post" >
+								<form accept-charset="UTF-8" class="pull-right" id="changeqty1<?php echo $row["name"]?><?php echo $row["shop_id"]?>" action="changecart.php" method="post" >
 									<input type="number" id="qty<?php echo $row["name"]?><?php echo $row["shop_id"]?>" value="<?php echo $quantity ?>" class="form-control" placeholder="<?php echo $quantity ?>" name="quantity" />
 									<input type="hidden" id="prodnm" name="name" value="<?php echo $name ?>" />
 									<input type="hidden" id="prodid" name="id" value="<?php echo $id ?>" />
