@@ -38,7 +38,7 @@ define("COOKIE_DOMAIN", ".localhost");
 define("COOKIE_SECRET_KEY", "1gp@TMPS{+$78sfpMJFe-92s");
 
 
-define("EMAIL_USE_SMTP", true);
+define("EMAIL_USE_SMTP", false);
 define("EMAIL_SMTP_HOST", "ssl://smtp.gmail.com");
 define("EMAIL_SMTP_AUTH", true);
 define("EMAIL_SMTP_USERNAME", "rahiman.abdul.asif@gmail.com@gmail.com");
