@@ -140,25 +140,27 @@
 					<?php } else if ($registration->registration_successful && !$registration->verification_successful){?>
 					
 						
-						<div style="padding-left:20px;margin-top:100px;text-align:center;">
-							<div class="col-md-4-offset-4 text-align=center">verify your account through email and login <?php include('_header.php'); ?></div>
+						<div style="padding-left:20px;margin-top:160px;text-align:center;">
+							<div class="col-md-4-offset-4 text-align=center"><?php include('_header.php'); ?>
+							<a href="../" class="login-btn col-md-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+							</div>
 							
 						</div>
 					
             <br>    
-		<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+		
    
 						
 	<?php }else if ($registration->verification_successful){?>
 					
 						
-						<div style="padding-left:20px;margin-top:100px;text-align:center;">
-							<div class="col-md-4-offset-4 text-align=center"> login with your id and password <?php include('_header.php'); ?></div>
+						<div style="padding-left:20px;margin-top:160px;text-align:center;">
+							<div class="col-md-4-offset-4 text-align=center"><?php include('_header.php'); ?></div>
 							<a href="index.php"><?php echo WORDING_BACK_TO_LOGIN; ?></a>
 						</div>
 					
             <br>    
-		<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+		
    
 						
 	<?php } ?>	
