@@ -18,7 +18,7 @@
 	  echo "product out of stock";
   else{if($quantity){if($quantity>0){
 	  $sql="INSERT INTO `cart` (`username`, `quantity`,id,name) VALUES ('$username', '$quantity','$id','$name')";
-  $conn = new mysqli("localhost", "root","","shops");
+  
   if($conn->query($sql)){echo "product added to cart";}else echo "product already in cart";}else echo"please enter a valid quantity";
   }else {echo "please input quantity";}}
   $conn->close();}else {echo "log in to insert review";}
