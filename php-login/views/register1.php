@@ -149,7 +149,7 @@
 		<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
    
 						
-	<?php }else if ($registration->registration_successful && $registration->verification_successful){?>
+	<?php }else if ($registration->verification_successful){?>
 					
 						
 						<div style="padding-left:20px;margin-top:100px;text-align:center;">
