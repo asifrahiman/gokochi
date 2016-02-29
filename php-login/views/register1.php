@@ -142,7 +142,7 @@
 						
 						<div style="padding-left:20px;margin-top:160px;text-align:center;">
 							<div class="col-md-4-offset-4 text-align=center"><?php include('_header.php'); ?>
-							<a href="../" class="login-btn col-md-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+							<a href="../" class="login-btn" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
 							</div>
 							
 						</div>
