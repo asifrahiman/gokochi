@@ -102,7 +102,7 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" id="user_name" type="text" name="user_name" required>
+                                    <input class="form-control" placeholder="Username" id="user_name" type="text" name="user_name" required>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" id="user_password" type="password" name="user_password" autocomplete="off" required>
