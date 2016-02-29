@@ -133,19 +133,32 @@
 				</div>
             </div>
         </div>
-			<a href="../" class="login-btn" style="text-align:center;margin-bottom:50px;margin-left:525px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+			<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
 	 </div>
 </form>
 					
-					<?php } else {?>
+					<?php } else if ($registration->registration_successful && !$registration->verification_successful){?>
 					
-						<div class="col-md-12 text-align=center">verify your account through email and login</div>
+						
 						<div style="padding-left:20px;margin-top:100px;text-align:center;">
+							<div class="col-md-4-offset-4 text-align=center">verify your account through email and login</div>
+							
+						</div>
+					
+            <br>    
+		<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+   
+						
+	<?php }else if ($registration->registration_successful && $registration->verification_successful){?>
+					
+						
+						<div style="padding-left:20px;margin-top:100px;text-align:center;">
+							<div class="col-md-4-offset-4 text-align=center"> login with your id and password</div>
 							<a href="index.php"><?php echo WORDING_BACK_TO_LOGIN; ?></a>
 						</div>
 					
             <br>    
-		<a href="../" class="login-btn" style="text-align:center;margin-bottom:50px;margin-left:600px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+		<a href="../" class="login-btn col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
    
 						
 	<?php } ?>	
