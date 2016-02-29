@@ -1,4 +1,4 @@
-<?php include('_header.php'); ?>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -91,6 +91,9 @@
     <div class="container" style="margin-top:50px;">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
+				<?php include('_header.php'); ?>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>

@@ -1,4 +1,4 @@
-<?php include('_header.php'); ?>
+
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,6 +92,9 @@
      <div class="container" >
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
+				<?php include('_header.php'); ?>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default"style="margin-top:200px;">
                     <div class="panel-heading">
                         <h3 class="panel-title">Password Reset</h3>

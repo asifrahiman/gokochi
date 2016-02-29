@@ -40,32 +40,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://127.0.0.1/asif"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="http://127.0.0.1/asif">About Kochi</a>
+                        <a href="../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Services</a>
+                        <a href="../">Services</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1/asif">Contact Us</a>
+                        <a href="../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
-					<li>
-                        <a href="http://127.0.0.1/asif/php-login/index.php?flag=2"><i class="fa fa-fw fa-shopping-cart"></i>Cart</a>
-                    </li>
+					
                     <li>
-                        <?php  session_start();
+                       <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php">Welcome <?php echo $username;?></a>
+                        <a href="../php-login/index.php">Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="http://127.0.0.1/asif/php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>
@@ -147,16 +145,16 @@
 						</div>
 						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 						  <ul class="list-group"> 
-								<li class="list-group-item">Bootply
-									<button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo
+								<li class="list-group-item ">Bootply
+									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo
 									</button>
 								</li> 
 								<li class="list-group-item">One itmus ac facilin
-									<button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat
+									<button type="button" class="btn btn-primary btn-sm col-md-offset-9" data-toggle="modal" data-target="#exampleModal" data-whatever="1234">Open modal for @fat
 									</button>
 								</li> 
 								<li class="list-group-item">Second eros
-									<button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap
+									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap
 									</button>
 								</li> 
 							</ul> 
