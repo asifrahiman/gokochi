@@ -30,6 +30,7 @@ define("DB_PASS", "asif");
  * @see http://www.php.net/manual/en/function.setcookie.php
  *
  * COOKIE_RUNTIME: How long should a cookie be valid ? 1209600 seconds = 2 weeks
+ * COOKIE_DOMAIN: The domain where the cookie is valid for, like '.mydomain.com'
  * COOKIE_SECRET_KEY: Put a random value here to make your app more secure. When changed, all cookies are reset.
  */
 define("COOKIE_RUNTIME", 1209600);
