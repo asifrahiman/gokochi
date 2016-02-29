@@ -141,7 +141,7 @@
 					
 						
 						<div style="padding-left:20px;margin-top:100px;text-align:center;">
-							<div class="col-md-4-offset-4 text-align=center">verify your account through email and login</div>
+							<div class="col-md-4-offset-4 text-align=center">verify your account through email and login <?php include('_header.php'); ?></div>
 							
 						</div>
 					
@@ -153,7 +153,7 @@
 					
 						
 						<div style="padding-left:20px;margin-top:100px;text-align:center;">
-							<div class="col-md-4-offset-4 text-align=center"> login with your id and password</div>
+							<div class="col-md-4-offset-4 text-align=center"> login with your id and password <?php include('_header.php'); ?></div>
 							<a href="index.php"><?php echo WORDING_BACK_TO_LOGIN; ?></a>
 						</div>
 					
