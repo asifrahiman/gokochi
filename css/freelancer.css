@@ -82,7 +82,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background:     transparent url("http://127.0.0.1/asif/img/profile.jpg") no-repeat fixed top center / cover; 
+    background:     transparent url("img/profile.jpg") no-repeat fixed top center / cover; 
 }
 
 
