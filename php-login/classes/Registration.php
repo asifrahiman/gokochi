@@ -154,13 +154,10 @@ class Registration
                         $this->messages[] = MESSAGE_VERIFICATION_MAIL_SENT;
                         $this->registration_successful = true;
 						$maxsize = 10000000; 
-						$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
-						if($imgdata)
-						{
 						if($_FILES['userfile']['error']==UPLOAD_ERR_OK) {
 							if(is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 								if( $_FILES['userfile']['size'] < $maxsize) {
-									
+									$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
 									mysql_connect("localhost", "asif", "asif") OR DIE (mysql_error());
 									mysql_select_db("login");
 									$sql = "UPDATE users SET image='{$imgData}' WHERE user_id=$user_id"; 
@@ -181,7 +178,7 @@ class Registration
 						else {
 							$msg= file_upload_error_message($_FILES['userfile']['error']);
 						}
-					echo $msg;}
+						echo $msg;
                     } else {
                         // delete this users account immediately, as we could not send a verification email
                         $query_delete_user = $this->db_connection->prepare('DELETE FROM users WHERE user_id=:user_id');
