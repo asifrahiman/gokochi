@@ -46,7 +46,7 @@
 
 </head>
 
-<body style="background: transparent url(&quot;img/profile.jpg&quot;) no-repeat fixed center top / cover ;" id="page-top" class="index">
+<body  id="page-top" class="index">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -95,7 +95,7 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header style="background: transparent url(&quot;img/profile.jpg&quot;) no-repeat fixed center top / cover ;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
