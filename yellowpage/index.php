@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Gokochi Yellowpage</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -72,7 +72,7 @@
         </div>
         <!-- /.container -->
     </nav>
-	<form action="http://127.0.0.1/asif/yellowpage/index.php" method="get" novalidate>
+	<form action="index.php" method="get" novalidate>
 		<div class="row control-group container" style="margin-left:10%;padding-top:20px">
 			<div class="form-group col-sm-10 floating-label-form-group controls">
 				<input type="text" class="form-control" placeholder="Search for Services"  name="name" id="search_tag" >
@@ -87,118 +87,61 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-					  <div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingOne">
-						  <h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							  Collapsible Group Item #1
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-						    <ul class="list-group"> 
-								<li class="list-group-item">Bootply</li> 
-								<li class="list-group-item">One itmus ac facilin</li> 
-								<li class="list-group-item">Second eros</li> 
-							</ul> 
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingTwo">
-						  <h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							  Collapsible Group Item #2
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-						  <ul class="list-group"> 
-								<li class="list-group-item">Bootply</li> 
-								<li class="list-group-item">One itmus ac facilin</li> 
-								<li class="list-group-item">Second eros</li> 
-							</ul> 
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingThree">
-						  <h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							  Collapsible Group Item #3
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-						  <ul class="list-group"> 
-								<li class="list-group-item">Bootply</li> 
-								<li class="list-group-item">One itmus ac facilin</li> 
-								<li class="list-group-item">Second eros</li> 
-							</ul> 
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingFour">
-						  <h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-							  Collapsible Group Item #3
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-						  <ul class="list-group"> 
-								<li class="list-group-item ">Bootply
-									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo
-									</button>
-								</li> 
-								<li class="list-group-item">One itmus ac facilin
-									<button type="button" class="btn btn-primary btn-sm col-md-offset-9" data-toggle="modal" data-target="#exampleModal" data-whatever="1234">Open modal for @fat
-									</button>
-								</li> 
-								<li class="list-group-item">Second eros
-									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap
-									</button>
-								</li> 
-							</ul> 
-						</div>
-					  </div>
+					<?php 
+						$dbname = "yellowpage";
+						$conn = new mysqli("localhost", "asif","asif", $dbname);
+						$sql = "SELECT DISTINCT `category`,catnum FROM `services` ";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()) {$catnum=$row["catnum"];?>
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="heading<?php echo $row["catnum"]?>">
+								<h4 class="panel-title">
+									<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $row["catnum"]?>" aria-expanded="false" aria-controls="collapse<?php echo $row["catnum"]?>">
+									<?php echo $row["category"]?>
+									</a>
+								</h4>
+							</div>
+							<div id="collapse<?php echo $row["catnum"]?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $row["catnum"]?>">
+								<ul class="list-group"> 
+									<?php
+									$sql = "SELECT * FROM `services` where catnum=$catnum ";
+									$result1 = $conn->query($sql);
+									if ($result1->num_rows > 0) {
+									while($row1 = $result1->fetch_assoc()) {?>
+									<li class="list-group-item ">
+										<button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#exampleModal" data-name="<?php echo $row1["name"]?>" data-contact="<?php echo $row1["ph_no"]?>" data-email="<?php echo $row1["email"]?>" data-address="<?php echo $row1["address"]?>" data-category="<?php echo $row1["category"]?>" data-description="<?php echo $row1["description"]?>" data-latitude="<?php echo $row1["latitude"]?>" data-longtitude="<?php echo $row1["longtitude"]?>" data-id="<?php echo $row1["id"]?>">View
+										</button><?php echo $row1["name"]?>
+									</li> <?php }}?>
+								</ul> 
+							</div>
+						</div><?php }}?>
+					</div>
 				</div>
-				
 			</div>
         </div>
 
 
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-		  <div class="modal-dialog" role="document">
+		  <div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+				<h4 class="modal-title" id="name"></h4>
 			  </div>
 			  <div class="modal-body">
-				<form action="index.php">
-				  <div class="form-group">
-					<label for="recipient-name" class="control-label">Recipient:</label>
-					<input type="text" class="form-control" id="recipient-name">
-				  </div>
-				  <div class="form-group">
-					<label for="message-text" class="control-label">Message:</label>
-					<textarea class="form-control" id="message-text"></textarea>
-				  </div>
-				  <button type="submit" class="btn btn-primary">Send message</button>
-				</form>
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<div id="image"></div>
+				<p id="address"></p>
+				<p class="pull-right" id="contact"></p>
+				<p id="email"></p>
+				<p id="description"></p>
+				<div id="map"></div>
 				
 			  </div>
 			</div>
 		  </div>
 		</div>
-          
-
-            
-
-       
     </div>
     <!-- /.container -->
 
@@ -241,19 +184,35 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-	<script >
+	
+	<script type="text/javascript" >
 		$('#exampleModal').on('show.bs.modal', function (event) {
 		  var button = $(event.relatedTarget) // Button that triggered the modal
-		  var recipient = button.data('whatever') // Extract info from data-* attributes
+		  var name = button.data('name')
+		  var description = button.data('description')
+		  var category = button.data('category')
+		  var address = button.data('address')
+		  var email = button.data('email')
+		  var contact = button.data('contact')
+		  var id = button.data('id')
+		  var latitude = button.data('latitude')
+		  var longtitude = button.data('longtitude')
 		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 		  var modal = $(this)
-		  modal.find('.modal-title').text('New message to ' + recipient)
-		  modal.find('.modal-body input').val(recipient)
+		  modal.find('.modal-title').text(name + " " + category)
+		  modal.find('.modal-body #description').text("description: "+description)
+		  modal.find('.modal-body #contact').text("contact: "+contact)
+		  modal.find('.modal-body #address').text("address: "+address)
+		  modal.find('.modal-body #email').text("email: "+email)
+		  document.getElementById("map").innerHTML= "location: <iframe frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" width=\"100%\" height=\"300px\"  src=\"https://maps.google.com/maps?q="+latitude+","+longtitude+"&ie=UTF8&t=roadmap&z=12&iwloc=B&output=embed\"></iframe>"
+		  document.getElementById("image").innerHTML="<img class=\"img-responsive\" src=\"getimg.php?id="+id+"\" alt=\"\">"
+		  
 		})
 	</script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+	
 
 </body>
 
