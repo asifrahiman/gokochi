@@ -87,9 +87,35 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-					<?php 
+					<?php error_reporting(0);
 						$dbname = "yellowpage";
 						$conn = new mysqli("localhost", "asif","asif", $dbname);
+						if($_GET['name'])
+						{
+						$search=$_GET['name'];
+						$search_exploded = explode (" ", $search);
+						$x=0;
+						foreach($search_exploded as $search_each)
+						{
+						$x++;
+						if($x==1)
+						$construct =" name LIKE '%$search_each%'";
+						else
+						$construct .="AND name LIKE '%$search_each%'";
+						 
+						}
+						$x=0;
+						foreach($search_exploded as $search_each)
+						{
+						$x++;
+						if($x==1)
+						$construct .=")OR (category LIKE '%$search_each%'";
+						else
+						$construct .="AND category LIKE '%$search_each%'";
+						 
+						}
+						$sql = "SELECT DISTINCT `category`,catnum FROM `services` WHERE ($construct)";
+						}else
 						$sql = "SELECT DISTINCT `category`,catnum FROM `services` ";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
@@ -105,7 +131,12 @@
 							<div id="collapse<?php echo $row["catnum"]?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $row["catnum"]?>">
 								<ul class="list-group"> 
 									<?php
-									$sql = "SELECT * FROM `services` where catnum=$catnum ";
+									if($_GET['name'])
+									{
+										
+										$sql = "SELECT * FROM `services` where catnum=$catnum and ($construct)";
+									}
+									else $sql = "SELECT * FROM `services` where catnum=$catnum";
 									$result1 = $conn->query($sql);
 									if ($result1->num_rows > 0) {
 									while($row1 = $result1->fetch_assoc()) {?>
