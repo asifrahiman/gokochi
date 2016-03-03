@@ -76,7 +76,7 @@
 	<form action="index.php" method="get" novalidate>
 		<div class="row control-group container" style="margin-left:10%;padding-top:20px">
 			<div class="form-group col-sm-10 floating-label-form-group controls">
-				<input type="text" class="form-control" placeholder="Search for Shops,Products"  name="name" id="search_tag" >
+				<input type="text" class="form-control" placeholder="Search for Shops or Products"  name="name" id="search_tag" >
 			</div>
 			<div class="col-sm-2">
 				<button type="submit" class="btn btn-success btn-lg"><i class="fa fa-fw fa-shopping-bag"></i> Shop</button>
@@ -119,12 +119,12 @@
 				{
 				$search=$_GET['name'];
 				$search_exploded = explode (" ", $search);
- 
+	
 				foreach($search_exploded as $search_each)
 				{
 				$x++;
 				if($x==1)
-				$construct .="shop_name LIKE '%$search_each%'";
+				$construct ="shop_name LIKE '%$search_each%'";
 				else
 				$construct .="AND shop_name LIKE '%$search_each%'";
 				 
@@ -135,7 +135,7 @@
 				else
 				$sql = "SELECT COUNT(*) FROM `shops`";
 				$result = $conn->query($sql);
-				$rec_limit =2;
+				$rec_limit =6;
 				$row = $result->fetch_assoc();
 				$rec_count = $row['COUNT(*)'];
 				
@@ -161,7 +161,7 @@
 					{
 					$x++;
 					if($x==1)
-					$construct .="shop_name LIKE '%$search_each%'";
+					$construct ="shop_name LIKE '%$search_each%'";
 					else
 					$construct .="AND shop_name LIKE '%$search_each%'";
 					}
@@ -332,7 +332,7 @@
 					{
 					$x++;
 					if($x==1)
-					$construct .="name LIKE '%$search_each%'";
+					$construct ="name LIKE '%$search_each%'";
 					else
 					$construct .="AND name LIKE '%$search_each%'";
 					}

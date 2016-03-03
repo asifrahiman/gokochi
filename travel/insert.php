@@ -1,8 +1,9 @@
 <?php
 	$name=$_POST['name'];
-	$lattitude=$_POST['lattitude'];
+	$latitude=$_POST['latitude'];
 	$longitude=$_POST['longitude'];
 	$description=$_POST['description'];
+	$shop_category=$_POST['shop_category'];
 	
 	    $maxsize = 10000000; 
     if($_FILES['userfile']['error']==UPLOAD_ERR_OK) {
@@ -11,7 +12,7 @@
 				$imgData =addslashes (file_get_contents($_FILES['userfile']['tmp_name']));
 				mysql_connect("localhost", "asif", "asif") OR DIE (mysql_error());
 				mysql_select_db("travel");
-				$sql = "INSERT INTO tourism (name,lattitude,longitude,description,image) VALUES ('$name','$lattitude','$longitude','$description','{$imgData}');";
+				$sql = "INSERT INTO activity (name,latitude,longitude,description,shop_image,shop_category) VALUES ('$name','$latitude','$longitude','$description','{$imgData}','$shop_category');";
 				mysql_query($sql) or die("Error in Query: " . mysql_error());
                 $msg='<p>Image successfully saved in database with id ='. mysql_insert_id().' </p>';
                }

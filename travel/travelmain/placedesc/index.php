@@ -40,19 +40,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
+                <a class="navbar-brand" href="../../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="../../">About Kochi</a>
+                        <a href="../../../">About Kochi</a>
                     </li>
                     <li>
-                        <a href="../../">Services</a>
+                        <a href="../../../">Services</a>
                     </li>
                     <li>
-                        <a href="../../">Contact Us</a>
+                        <a href="../../../">Contact Us</a>
                     </li>
                 </ul>
 				<ul class="nav navbar-nav pull-right">
@@ -61,9 +61,9 @@
                         <?php  session_start();
 						 
 						if(isset($_SESSION['user_name'])){$username=$_SESSION['user_name'];?>
-                        <a href="../../php-login/index.php"></i>Welcome <?php echo $username;?></a>
+                        <a href="../../../php-login/index.php"></i>Welcome <?php echo $username;?></a>
 						<?php  } else{?>
-                        <a href="../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
+                        <a href="../../../php-login/index.php"><i class="fa fa-fw fa-sign-in"></i>Login</a><?php }?>
                     </li>
                     
                 </ul>

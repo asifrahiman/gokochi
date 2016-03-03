@@ -209,8 +209,23 @@ $cat=$_GET['category'];
 						}
 						
 						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	 ";
-						if($_GET['name']!=null)
-						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	and name='$name' ";
+						if($_GET['name'])
+						{
+							$search=$_GET['name'];
+							$search_exploded = explode (" ", $search);
+			 
+							foreach($search_exploded as $search_each)
+							{
+							$x++;
+							if($x==1)
+							$construct .="name LIKE '%$search_each%'";
+							else
+							$construct .="AND name LIKE '%$search_each%'";
+							 
+							}
+							$sql1 = "SELECT * FROM `products` where shop_id=$shopid	and $construct";
+						}
+						
 						if($_GET['category']!=null)
 						$sql1 = "SELECT * FROM `products` where shop_id=$shopid	and category='$cat' ";
 						if ($conn->query($sql1)) {
