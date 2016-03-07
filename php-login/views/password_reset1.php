@@ -16,6 +16,8 @@
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<style>
+	input:invalid { border: 2px solid red;}
+	input:valid { border: 2px solid green; }
 	.login-btn {
 		margin-top: 15px;
 		border: 2px solid #000000;

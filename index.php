@@ -8,23 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-	<link rel="manifest" href="img/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="red">
     <title>Go kochi!</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -157,6 +144,7 @@
                             </div>
                         </div>
                         <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+						
                     </a>
 					<div class="portfolio-caption text-center">
                         <h4>Yellow Page</h4>
@@ -188,6 +176,7 @@
 					<ol>Government body: Cochin Municipal Corporation</ol>
 					<ol>Number of airports: 1</ol><br></b>
 				</div>
+				
 				<div class="col-lg-4 col-lg-offset-2" style="text-align:left;">
 				<p>	Kochi
 					City in India
@@ -287,7 +276,7 @@
 							<form action="travel/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
 								<div class="row control-group"  width=100% style="margin-left:0px; margin-right:0px;">
 									<div class="form-group col-md-10 floating-label-form-group controls">
-										<input type="text" class="form-control" placeholder="Search for tourist destinations"  name="name" id="search_tag" required data-validation-required-message="search for a tourist destination">
+										<input type="search" class="form-control" placeholder="Search for tourist destinations"  name="name" id="search_tag" required data-validation-required-message="search for a tourist destination">
 										<p class="help-block text-danger"></p>
 									</div>
 									<div class="col-md-2">
@@ -322,7 +311,7 @@
 							<form action="shop/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;" >
 								<div class="row control-group"  >
 									<div class="form-group col-md-10 floating-label-form-group ">
-										<input type="text" class="form-control" placeholder="Search for Shops,Products"  name="name" >
+										<input type="search" class="form-control" placeholder="Search for Shops,Products"  name="name" >
 									</div>
 									<div class="col-md-2">
 										<button type="submit"  class="btn btn-success btn-lg"><i class="fa fa-fw fa-shopping-bag"></i> Shop</button>
@@ -358,7 +347,7 @@
 						<form action="yellowpage/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
 							<div class="row control-group"  width=100% style="margin-left:0px; margin-right:0px;">
 								<div class="form-group col-md-10 floating-label-form-group controls">
-									<input type="text" class="form-control" placeholder="Search for Services"  name="name" id="search_tag" required data-validation-required-message="Enter a shop name, shop type, shop item">
+									<input type="search" class="form-control" placeholder="Search for Services"  name="name" id="search_tag" required data-validation-required-message="Enter a shop name, shop type, shop item">
 								</div>
 								<div class="col-md-2">
 									<button type="submit" style="margin-top:0px;" class="btn btn-success btn-lg"><i class="fa fa-fw fa-search"></i> Search</button>

@@ -16,6 +16,10 @@
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <style>
+
+
+input:invalid { border: 2px solid red;}
+input:valid { border: 2px solid green; }
 	.login-btn {
 		margin-top: 15px;
 		border: 2px solid #000000;
@@ -113,17 +117,17 @@
 									<label for="user_password_new"><?php echo WORDING_REGISTRATION_PASSWORD; ?></label>
 									<input id="user_password_new" class="form-control" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />
 
-									<label for="user_password_repeat"><?php echo WORDING_REGISTRATION_PASSWORD_REPEAT; ?></label>
-									<input id="user_password_repeat" class="form-control" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
+									<label for="user_password_repeat" id="error_msg"><?php echo WORDING_REGISTRATION_PASSWORD_REPEAT; ?></label>
+									<input id="user_password_repeat" class="form-control" type="password" oninput="checkPasswords()" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
 									<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
                                     <label for="picture"><?php echo "Select Image"; ?></label>
-									<input id="picture" name="userfile" type="file"  />
+									<input id="picture" name="userfile" type="file"  optional />
 									<img src="tools/showCaptcha.php" alt="captcha" />
 
 									<label><?php echo WORDING_REGISTRATION_CAPTCHA; ?></label>
 									<input type="text"  class="form-control" name="captcha" required />
 								</div>
-									<input type="submit" class="btn btn-success btn-lg" name="register" value="<?php echo WORDING_REGISTER; ?>" />
+									<button type="submit" class="btn btn-success btn-lg" name="register" value="" ><?php echo WORDING_REGISTER; ?></button
 							</fieldset>
                         </form>
                     </div>
@@ -179,6 +183,20 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+	<script> 
+ function checkPasswords() {
+ var user_password_new = document.getElementById('user_password_new');
+ var user_password_repeat = document.getElementById('user_password_repeat');
+ if (user_password_new.value != user_password_repeat.value) {
+	user_password_repeat.setCustomValidity('passwords do not match');
+	document.getElementById('error_msg').innerHTML="Passwords do not match";
+
+ } else {
+ user_password_repeat.setCustomValidity('');
+ document.getElementById('error_msg').innerHTML="Passwords match";
+ }
+ }
+</script>
  </body>   
 
 <?php include('_footer.php'); ?>
