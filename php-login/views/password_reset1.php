@@ -112,7 +112,7 @@
 									<label for="user_password_new"><?php echo WORDING_NEW_PASSWORD; ?></label>
 									<input id="user_password_new" class="form-control"type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />
 								
-									<label for="user_password_repeat"><?php echo WORDING_NEW_PASSWORD_REPEAT; ?></label>
+									<label for="user_password_repeat" id="error_msg"><?php echo WORDING_NEW_PASSWORD_REPEAT; ?></label>
 									<input id="user_password_repeat" class="form-control"type="password" oninput="checkPasswords()" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
 									<button type="submit" class="form-control"name="submit_new_password" value="" ><?php echo WORDING_SUBMIT_NEW_PASSWORD; ?></button>
 								</div>
