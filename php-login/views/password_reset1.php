@@ -114,7 +114,7 @@
 								
 									<label for="user_password_repeat"><?php echo WORDING_NEW_PASSWORD_REPEAT; ?></label>
 									<input id="user_password_repeat" class="form-control"type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
-									<input type="submit" class="form-control"name="submit_new_password" value="<?php echo WORDING_SUBMIT_NEW_PASSWORD; ?>" />
+									<button type="submit" class="form-control"name="submit_new_password" value="" ><?php echo WORDING_SUBMIT_NEW_PASSWORD; ?></button>
 								</div>
 							</fieldset>
 						</form>
@@ -166,6 +166,20 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+	<script> 
+ function checkPasswords() {
+ var user_password_new = document.getElementById('user_password_new');
+ var user_password_repeat = document.getElementById('user_password_repeat');
+ if (user_password_new.value != user_password_repeat.value) {
+	user_password_repeat.setCustomValidity('passwords do not match');
+	document.getElementById('error_msg').innerHTML="Passwords do not match";
+
+ } else {
+ user_password_repeat.setCustomValidity('');
+ document.getElementById('error_msg').innerHTML="Passwords match";
+ }
+ }
+</script>
 
 </body>
 <?php include('_footer.php'); ?>
