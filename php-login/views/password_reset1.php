@@ -113,7 +113,7 @@
 									<input id="user_password_new" class="form-control"type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />
 								
 									<label for="user_password_repeat"><?php echo WORDING_NEW_PASSWORD_REPEAT; ?></label>
-									<input id="user_password_repeat" class="form-control"type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
+									<input id="user_password_repeat" class="form-control"type="password" oninput="checkPasswords()" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
 									<button type="submit" class="form-control"name="submit_new_password" value="" ><?php echo WORDING_SUBMIT_NEW_PASSWORD; ?></button>
 								</div>
 							</fieldset>
@@ -124,6 +124,9 @@
 	<div class="container" style="margin-top:150px;">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
+				<?php include('_header.php'); ?>
+			</div>
+			<div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Password Reset</h3>
