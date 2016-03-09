@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" >
 	
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -89,14 +89,25 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
+				<div class="well">
+					<div id="review-box">
+						<h4>Special Offers For You<h4>
+						<hr>
+						<div class="row">
+							<div class="col-md-12">
+								<p></p>
+							</div>
+						</div>
+					</div>
+                </div>
                 <h1 class="page-header">Shops
 				    <?php error_reporting(0);
 					if($_GET['name']){?>
-                    <small>shops with name <?php echo $_GET['name']?></small>
+                    <small  >shops with name <?php echo $_GET['name']?></small>
 					<?php }else{?>
                     <small>shops in kochi </small><?php } ?>
 				</h1>	
-					<button onclick="getLocation()">Where am I ?</button>
+					
         <!-- Projects Row -->
         <div class="row">
 			
@@ -427,7 +438,7 @@
 							echo "Error creating table: " . $conn->error;
 						}
 
-						$conn->close();
+						
 					?>
         
         <hr>
@@ -480,21 +491,28 @@
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/freelancer.js"></script>
 	<script type="">
-	function getLocation() {
-	  if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
-	  } else {
-		displayCoords.innerHTML="Geolocation API not supported by your browser.";
-	  }
-	}
-	  
-	  
+	$(function() {
+	 if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		  } else {
+			alert("Geolocation API not supported by your browser.");
+		  }
+	});
+	
 	function showPosition(position) {
-	 	
+	 	<?php 
+		$sql = "SELECT * FROM discount";
+		$result = $conn->query($sql);
+		while($row = $result->fetch_assoc()) {
+			$shopid=$row['shop_id'];
+			$sql = "SELECT * FROM shops where shop_id=$shopid ";
+			$result1 = $conn->query($sql);
+			$row1 = $result1->fetch_assoc();
+		?>
 		var lat1=position.coords.latitude;
 		var lon1=position.coords.longitude;
-		var lat2=9.7977177;
-		var lon2=76.4399063;
+		var lat2=<?php echo $row1['lattitude'];?>;
+		var lon2=<?php echo $row1['longtitude'];?>;
 		var radlat1 = Math.PI * lat1/180
 		var radlat2 = Math.PI * lat2/180
 		var theta = lon1-lon2
@@ -504,9 +522,9 @@
 		dist = dist * 180/Math.PI
 		dist = dist * 60 * 1.1515
 		dist = dist * 1.609344
-		
+		if(dist<<?phpecho $row['distance'];?>)
 		alert("You entered: " + dist)
-	  
+		<?php }   ?>
 	}	
 	
 	
