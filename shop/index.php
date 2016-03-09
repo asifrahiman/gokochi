@@ -91,11 +91,11 @@
             <div class="col-lg-12">
 				<div class="well">
 					<div id="review-box">
-						<h4>Special Offers For You<h4>
+						<h4>Special Offers For You</h4>
 						<hr>
 						<div class="row">
-							<div class="col-md-12">
-								<p></p>
+							<div class="col-md-12" id="offers">
+								<small>*offers not available for delivery</small>
 							</div>
 						</div>
 					</div>
@@ -522,8 +522,10 @@
 		dist = dist * 180/Math.PI
 		dist = dist * 60 * 1.1515
 		dist = dist * 1.609344
-		if(dist<<?phpecho $row['distance'];?>)
-		alert("You entered: " + dist)
+		var dist1=parseInt(<?php echo $row['distance']; ?>);
+		if(dist<dist1)
+		{var q="<p><?php echo $row['offers']; ?> from <?php echo $row1['shop_name'];?> Coupon Code:<?php echo $row['coupon_code']; ?> </p><hr>";
+		$("#offers").prepend(q);}
 		<?php }   ?>
 	}	
 	
