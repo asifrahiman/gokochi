@@ -95,11 +95,8 @@
                     <small>shops with name <?php echo $_GET['name']?></small>
 					<?php }else{?>
                     <small>shops in kochi </small><?php } ?>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
+				</h1>	
+					<button onclick="getLocation()">Where am I ?</button>
         <!-- Projects Row -->
         <div class="row">
 			
@@ -482,6 +479,38 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/freelancer.js"></script>
+	<script type="">
+	function getLocation() {
+	  if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	  } else {
+		displayCoords.innerHTML="Geolocation API not supported by your browser.";
+	  }
+	}
+	  
+	  
+	function showPosition(position) {
+	 	
+		var lat1=position.coords.latitude;
+		var lon1=position.coords.longitude;
+		var lat2=9.7977177;
+		var lon2=76.4399063;
+		var radlat1 = Math.PI * lat1/180
+		var radlat2 = Math.PI * lat2/180
+		var theta = lon1-lon2
+		var radtheta = Math.PI * theta/180
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		dist = Math.acos(dist)
+		dist = dist * 180/Math.PI
+		dist = dist * 60 * 1.1515
+		dist = dist * 1.609344
+		
+		alert("You entered: " + dist)
+	  
+	}	
+	
+	
+	</script>
 
 </body>
 
