@@ -114,7 +114,7 @@
 								
 									<label for="user_password_repeat" id="error_msg"><?php echo WORDING_NEW_PASSWORD_REPEAT; ?></label>
 									<input id="user_password_repeat" class="form-control"type="password" oninput="checkPasswords()" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />
-									<button type="submit" class="form-control"name="submit_new_password" value="" ><?php echo WORDING_SUBMIT_NEW_PASSWORD; ?></button>
+									<button type="submit" class="form-control" name="submit_new_password" ><?php echo WORDING_SUBMIT_NEW_PASSWORD; ?></button>
 								</div>
 							</fieldset>
 						</form>
@@ -137,7 +137,7 @@
                                 <div class="form-group">
 									<label for="user_name"><?php echo WORDING_REQUEST_PASSWORD_RESET; ?></label>
 									<input id="user_name" class="form-control" type="text" name="user_name" required />
-									<input type="submit" class="btn btn-success btn-lg" name="request_password_reset" value="<?php echo WORDING_RESET_PASSWORD; ?>" />
+									<button type="submit" class="btn btn-success btn-lg" name="request_password_reset"><?php echo WORDING_RESET_PASSWORD; ?></button>
 
 								</div>
 							</fieldset>
@@ -152,8 +152,7 @@
                 </div>
             </div>
         </div>
-		<a href="../" class="login-btn" style="text-align:center;margin-bottom:50px;margin-left:500px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
-    </div>
+	</div>
 </form>
  <!-- jQuery -->
     <script src="js/bootstrap.min.js"></script>

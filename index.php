@@ -8,11 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
-	<meta name="theme-color" content="red">
-    <title>Go kochi!</title>
+	<link rel="icon" type="image/png" href="img/fav/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/fav/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="img/fav/favicon-16x16.png" sizes="16x16">
+	<title>Go kochi!</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top"><i class="fa fa-spinner fa-pulse"></i>Go kochi!</a>
+                <a class="navbar-brand" href="#page-top"><i><image src="img/favicon1.png" /></i>Go kochi!</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

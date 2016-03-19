@@ -153,7 +153,7 @@ $name= $_GET['name'];
 
 					
 
-					<div class="col-md-12">
+					<div class="col-md-6">
 						<?php 
 						while($row = $result->fetch_assoc()) {{?>
 						<h4><?php echo $row["shop_name"]?></p></h4>
@@ -211,7 +211,8 @@ $name= $_GET['name'];
 										<p id="addcartstatus"></p>
 							</div></div>
 						</div>
-
+					</div>
+					<div class="col-md-6" style="margin-top:40px">
 						<div class="well">
 
 							<div class="well-sm">

@@ -137,8 +137,7 @@ input:valid { border: 2px solid green; }
 				</div>
             </div>
         </div>
-			<a href="../" class="login-btn btn-sm col-md-4-offset-4" style="text-align:center;margin-bottom:50px;"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
-	 </div>
+	</div>
 </form>
 					
 					<?php } else if ($registration->registration_successful && !$registration->verification_successful){?>
