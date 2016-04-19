@@ -255,7 +255,7 @@
 		
     </section>
 	<div class="portfolio-modal modal fade" style="background-color: white;" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
+        <div class="modal-content" style="background: transparent none repeat scroll 0% 0%;">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl">
@@ -272,19 +272,9 @@
                             <p>Get information about various tourist hotspots in kochi.<br> <a href="#page-top">Go Kochi!</a> Choose the places to visit during your visit to kochi </p>
                         </div>
                     	<br>
-							<form action="travel/index.php" method="get" style="margin-top:100px;margin-bottom:-0px;"  novalidate>
-								<div class="row control-group"  width=100% style="margin-left:0px; margin-right:0px;">
-									<div class="form-group col-md-10 floating-label-form-group controls">
-										<input type="search" class="form-control" placeholder="Search for tourist destinations"  name="name" id="search_tag" required data-validation-required-message="search for a tourist destination">
-										<p class="help-block text-danger"></p>
-									</div>
-									<div class="col-md-2">
-										<button type="submit" style="margin-top:0px;" class="btn btn-success btn-lg"><i class="fa fa-fw fa-map-marker"></i> search</button>
-									</div>
-								</div>
-								<br>
-							</form>
-						</div>	
+						<a href="travel/index.php" class="btn btn-success btn-lg"><i class="fa fa-fw fa-map-marker"></i> search</a>
+								
+						
 					</div>
                 </div>
             </div>
