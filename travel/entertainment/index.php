@@ -11,29 +11,23 @@
 
      <title>Entertainment</title>
 
-    <!-- Bootstrap Core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Custom CSS -->
+    
     <link href="css/shop-homepage.css" rel="stylesheet">
 	<link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+    
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -43,7 +37,7 @@
                 </button>
                 <a class="navbar-brand" href="../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+    
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -69,13 +63,13 @@
                     
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+    
         </div>
-        <!-- /.container -->
+    
     </nav>
 	<div id="wrapper">
 
-        <!-- Sidebar -->
+    
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -103,9 +97,6 @@
                 
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
 			<a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Toggle Categories</a><br>
@@ -114,8 +105,6 @@
                 <h1 class="page-header">Fun and Entertainment in Kochi </h1>
             </div>
         </div>
-        <!-- /.row -->
-<!-- Projects Row -->
         
 			<?php 
 			if(!$_GET['cat']){
@@ -177,7 +166,7 @@
     </div>
 	</div>
 	
-    <!-- /.container -->
+    
 
     <div class="container">
 
@@ -214,13 +203,13 @@
     </footer>
 
     </div>
-    <!-- /.container -->
+    
 
-    <!-- jQuery -->
+    
     <script src="js/jquery.js"></script>
 	<script >
 		$('#exampleModal').on('show.bs.modal', function (event) {
-		  var button = $(event.relatedTarget) // Button that triggered the modal
+		  var button = $(event.relatedTarget)
 		  var name = button.data('name')
 		  var description = button.data('description')
 		  var category = button.data('category')
@@ -230,8 +219,6 @@
 		  var id = button.data('id')
 		  var latitude = button.data('latitude')
 		  var longtitude = button.data('longtitude')
-		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 		  var modal = $(this)
 		  modal.find('.modal-title').text(name + " " + category)
 		  modal.find('.modal-body #description').text("description: "+description)
@@ -248,7 +235,7 @@
     });
     </script>
 
-    <!-- Bootstrap Core JavaScript -->
+    
     <script src="js/bootstrap.min.js"></script>
 
 </body>

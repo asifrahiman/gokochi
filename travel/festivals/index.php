@@ -11,28 +11,22 @@
 
      <title>Festivals</title>
 
-    <!-- Bootstrap Core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Custom CSS -->
+    
     <link href="css/shop-homepage.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+    
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -42,7 +36,7 @@
                 </button>
                 <a class="navbar-brand" href="../../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+    
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -68,12 +62,12 @@
                     
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+    
         </div>
-        <!-- /.container -->
+    
     </nav>
 	
-    <!-- Page Content -->
+    
     <div class="container">
 		 <div class="row">
             <div class="col-lg-12">
@@ -83,8 +77,6 @@
                 </h1>
             </div>
         </div>
-        <!-- /.row -->
-<!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item text-center">
                 <a data-toggle="modal" data-target="#exampleModal" data-name="Muziris Binale" data-image="img/tree.jpg"  data-description="A fallen tree in Vasscoda gama Square, Fort Kochi in Muziris Binale. The Kochi-Muziris Biennale is an international exhibition of contemporary art held in Kochi, Kerala. It is the first Biennale being held in India.[1] The Kochi-Muziris Biennale is an initiative of the Kochi-Biennale Foundation with support from the Government of Kerala . The exhibition was set in spaces across Kochi, Muziris and surrounding islands. The shows were held in existing galleries and halls, and site-specific installations in public spaces, heritage buildings and disused ">
@@ -178,7 +170,7 @@
 
        
     </div>
-    <!-- /.container -->
+    
 
     <div class="container">
 
@@ -215,9 +207,6 @@
     </footer>
 
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
 	<script >
 		$('#exampleModal').on('show.bs.modal', function (event) {
@@ -225,15 +214,13 @@
 		  var name = button.data('name')
 		  var description = button.data('description')
 		  var image = button.data('image')
-		  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 		  var modal = $(this)
 		  modal.find('.modal-title').text(name )
 		  modal.find('.modal-body #description').text("description: "+description)
 		  document.getElementById("image").innerHTML="<img class=\"img-responsive\" src=\""+image+"\" alt=\"\">"
 		 })
 	</script>
-    <!-- Bootstrap Core JavaScript -->
+    
     <script src="js/bootstrap.min.js"></script>
 
 </body>

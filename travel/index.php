@@ -13,34 +13,28 @@
 	<link rel="icon" type="image/png" href="../img/fav/favicon-16x16.png" sizes="16x16">
     <title>GoKochi Travel</title>
 
-    <!-- Bootstrap Core CSS -->
+   
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+   
     <link href="css/agency.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
+   
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+   
 </head>
 
 <body >
 	
-    <!-- Navigation -->
+   
    <nav class="navbar navbar-default navbar-fixed-top">
    <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+   
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -50,7 +44,7 @@
                 </button>
                 <a class="navbar-brand" href="../"><i class="fa fa-spinner fa-pulse"></i>Gokochi</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+   
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -75,12 +69,10 @@
                     
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+   
         </div>
-        <!-- /.container -->
+   
     </nav>
-	    <!-- Page Content -->
-		<!-- Portfolio Grid Section -->
 	<header style="background-attachment: fixed;">
         <div class="container">
             <div class="intro-text">
@@ -127,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="spa/index.php" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -185,7 +177,7 @@
             </div>
         </div>
     </section>
-        <!-- Footer -->
+    
         <footer class="text-center">
        
         <div class="footer-below">
@@ -221,23 +213,23 @@
     </div>
 
 
-    <!-- /.container -->
+    
 
    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
+    
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
-    <!-- Contact Form JavaScript -->
+    
     <!script src="js/jqBootstrapValidation.js"></script>
     <!script src="js/contact_me.js"></script>
 
-    <!-- Custom Theme JavaScript -->
+    
     <script src="js/agency.js"></script>
 
 </body>
