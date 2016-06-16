@@ -514,6 +514,7 @@
 		dist = dist * 60 * 1.1515
 		dist = dist * 1.609344
 		var dist1=parseInt(<?php echo $row['distance']; ?>);
+		alert(dist);
 		if(dist<dist1)
 		{var q="<p><?php echo $row['offers']; ?> from <?php echo $row1['shop_name'];?> Coupon Code:<?php echo $row['coupon_code']; ?> </p><hr>";
 		$("#offers").prepend(q);}
